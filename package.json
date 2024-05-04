@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint --ext '.js,.ts,.jsx,.tsx' .",
     "lint:fix": "eslint --ext '.js,.ts,.jsx,.tsx' --fix .",
-    "format": "prettier --write '**/*.{js,ts,jsx,tsx,json}'"
+    "format": "prettier --write '**/*.{js,ts,jsx,tsx,json}'",
+    "prepare": "husky"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
@@ -31,9 +32,20 @@
     "eslint-config-next": "14.2.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-tailwindcss": "^3.15.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "postcss": "^8",
     "prettier": "3.2.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json}": [
+      "prettier --write"
+    ]
   }
 }
