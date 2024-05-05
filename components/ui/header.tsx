@@ -1,44 +1,36 @@
 import Link from "next/link";
 import { Rajdhani } from "next/font/google";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "../mode-toggle";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
-const glovalNavigationItems = [
-  {
-    label: "Skills",
-    href: "/#skills",
-  },
-  {
-    label: "Works",
-    href: "/#works",
-  },
-  {
-    label: "Profile",
-    href: "/#profile",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
-const snsItems = [
-  {
-    icon: "",
-    label: "X",
-    href: "https://twitter.com/mitsui_mk",
-  },
-  {
-    icon: "",
-    label: "facebook",
-    href: "https://www.facebook.com/mitsui1128",
-  },
-];
+const headerContents = {
+  glovalNavigationItems: [
+    {
+      label: "Skills",
+      href: "/#skills",
+    },
+    {
+      label: "Works",
+      href: "/#works",
+    },
+    {
+      label: "Profile",
+      href: "/#profile",
+    },
+    // {
+    //   label: "Contact",
+    //   href: "/contact",
+    // },
+  ],
+  githubUrl: "https://github.com/mihye1128/",
+};
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 flex min-h-[60px] w-full items-center bg-background/90 px-6 py-2">
+    <header className="sticky top-0 z-50 flex min-h-[60px] w-full items-center bg-background/90 px-5 py-2 md:px-6">
       <p
         className={cn([
           rajdhani.className,
@@ -53,10 +45,13 @@ export default function Header() {
         </Link>
       </p>
       <nav
-        className={cn([rajdhani.className, "ml-auto flex items-center gap-2"])}
+        className={cn([
+          rajdhani.className,
+          "ml-auto -mr-[10px] flex items-center gap-1",
+        ])}
       >
         <ul className="hidden gap-1 text-sm tracking-wide sm:flex">
-          {glovalNavigationItems.map((item) => (
+          {headerContents.glovalNavigationItems.map((item) => (
             <li
               key={item.label}
               className={cn([
@@ -73,15 +68,15 @@ export default function Header() {
             </li>
           ))}
         </ul>
-        <ul className="hidden">
-          {snsItems.map((item) => (
-            <li key={item.label}>
-              <Button asChild>
-                <Link href={item.href}>{item.icon}</Link>
-              </Button>
-            </li>
-          ))}
-        </ul>
+        <Button variant="ghost" size="icon" asChild>
+          <Link
+            href={headerContents.githubUrl}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <SiGithub className="size-5" />
+          </Link>
+        </Button>
         <ModeToggle />
       </nav>
     </header>
