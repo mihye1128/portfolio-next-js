@@ -23,7 +23,7 @@ import {
   SiFirebase,
   SiCloudflare,
 } from "@icons-pack/react-simple-icons";
-import SkillItem from "./skillitem";
+import SkillItem from "./skill-item";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 

@@ -1,5 +1,5 @@
 import Section from "@/components/ui/section";
-import WorkItem from "./workItem";
+import WorkItem from "./work-item";
 import {
   SiReact,
   SiAstro,
