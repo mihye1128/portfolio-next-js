@@ -59,11 +59,11 @@ const contents = {
         ],
       },
       {
-        title: "Javascript",
+        title: "JavaScript",
         skillItems: [
           {
             icon: <SiTypescript color="default" size={40} />,
-            label: "Typescript",
+            label: "TypeScript",
             description:
               "フレームワークを採用する際は、合わせてTypescriptを採用します。",
           },
