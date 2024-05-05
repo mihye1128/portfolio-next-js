@@ -84,9 +84,11 @@ export default function WorkItem({
         <Link
           href={work.href}
           className="absolute inset-0 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          rel="noreferrer noopener"
+          rel="noreferrer noopener order-5"
           target="_blank"
-        ></Link>
+        >
+          <span className="hidden">{work.title}</span>
+        </Link>
       )}
     </article>
   );
