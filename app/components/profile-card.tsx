@@ -33,7 +33,7 @@ export default function ProfileCard({
           <AvatarFallback>{profile.name}</AvatarFallback>
         </Avatar>
         <div className="text-center md:text-left">
-          <p className="text-xl">{profile.name}</p>
+          <p className="text-xl md:pl-[10px]">{profile.name}</p>
           {profile.sns && (
             <div className="">
               {profile.sns?.x && (

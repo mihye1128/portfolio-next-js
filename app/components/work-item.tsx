@@ -24,18 +24,36 @@ export default function WorkItem({
   return (
     <article
       className={cn([
-        "relative border row-span-4 grid grid-rows-subgrid gap-2 overflow-hidden rounded-xl bg-card pb-6 shadow group",
+        "relative border row-span-4 grid grid-rows-subgrid gap-2 rounded-xl bg-card pb-6 shadow group",
         work.href
           ? "hover:shadow-lg transition-shadow hover:cursor-pointer"
           : "",
       ])}
     >
       <h3 className="order-2 px-5 pt-6 font-bold md:px-6">
-        {work.title.map((item, j) => (
-          <span key={`title_${j}`} className="block">
-            {item}
-          </span>
-        ))}
+        {work.href ? (
+          <Link
+            href={work.href}
+            rel="noreferrer noopener"
+            target="_blank"
+            className="group focus-visible:outline-none"
+          >
+            {work.title.map((item, j) => (
+              <span key={`title_${j}`} className="block">
+                {item}
+              </span>
+            ))}
+            <span className="absolute inset-0 z-10 block rounded-xl transition-colors group-focus-visible:outline-none group-focus-visible:ring-2 group-focus-visible:ring-ring group-focus-visible:ring-offset-2 dark:group-focus-visible:ring-offset-background"></span>
+          </Link>
+        ) : (
+          <>
+            {work.title.map((item, j) => (
+              <span key={`title_${j}`} className="block">
+                {item}
+              </span>
+            ))}
+          </>
+        )}
       </h3>
       <div className="order-3 px-5 text-sm leading-[1.75] md:px-6">
         {work.description.map((item, j) => (
@@ -48,7 +66,7 @@ export default function WorkItem({
         </dt>
         <dd>{work.releaseDate}</dd>
       </dl>
-      <div className="relative order-1 overflow-hidden">
+      <div className="relative order-1 overflow-hidden rounded-t-xl">
         <div
           style={thumbnailImage}
           className={cn([
@@ -80,16 +98,6 @@ export default function WorkItem({
           </ul>
         )}
       </div>
-      {work.href && (
-        <Link
-          href={work.href}
-          className="absolute inset-0 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          rel="noreferrer noopener order-5"
-          target="_blank"
-        >
-          <span className="hidden">{work.title}</span>
-        </Link>
-      )}
     </article>
   );
 }
