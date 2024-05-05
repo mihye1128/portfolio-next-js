@@ -15,9 +15,9 @@ export default function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="py-20" id={id}>
+    <section className="py-12 md:py-20" id={id}>
       <div className="container">
-        <div className="mb-12 grid gap-8">
+        <div className="mb-6 grid gap-4 md:mb-12 md:gap-8">
           <h2
             className={cn([
               rajdhani.className,

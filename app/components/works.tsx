@@ -135,7 +135,7 @@ export default function Works() {
       description={contents.description}
       id="works"
     >
-      <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 md:gap-10">
         {contents.content.workItems.map((work, i) => (
           <WorkItem work={work} key={`work_${i}`} />
         ))}

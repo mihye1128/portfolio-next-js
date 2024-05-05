@@ -24,25 +24,25 @@ export default function WorkItem({
   return (
     <article
       className={cn([
-        "relative row-span-4 grid grid-rows-subgrid gap-2 overflow-hidden rounded-sm bg-card pb-6 shadow group",
+        "relative border row-span-4 grid grid-rows-subgrid gap-2 overflow-hidden rounded-xl bg-card pb-6 shadow group",
         work.href
           ? "hover:shadow-lg transition-shadow hover:cursor-pointer"
           : "",
       ])}
     >
-      <h3 className="order-2 px-6 pt-6 font-bold">
+      <h3 className="order-2 px-5 pt-6 font-bold md:px-6">
         {work.title.map((item, j) => (
           <span key={`title_${j}`} className="block">
             {item}
           </span>
         ))}
       </h3>
-      <div className="order-3 px-6 text-sm leading-[1.75]">
+      <div className="order-3 px-5 text-sm leading-[1.75] md:px-6">
         {work.description.map((item, j) => (
           <p key={`description_${j}`}>{item}</p>
         ))}
       </div>
-      <dl className="order-4 flex items-center px-6 text-sm">
+      <dl className="order-4 flex items-center px-5 text-sm md:px-6">
         <dt className="mr-3 rounded-sm bg-foreground/10 px-2 py-[2px]">
           公開時期
         </dt>

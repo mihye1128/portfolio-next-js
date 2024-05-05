@@ -21,7 +21,7 @@ export default function ProfileCard({
   };
 }) {
   return (
-    <div className="rounded-xl border bg-card px-6 py-8 md:p-8">
+    <div className="rounded-xl border bg-card px-5 py-8 md:p-8 md:px-6">
       <div
         className={cn([
           rajdhani.className,
