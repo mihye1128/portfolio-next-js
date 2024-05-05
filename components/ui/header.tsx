@@ -7,16 +7,16 @@ import { ModeToggle } from "../mode-toggle";
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 const glovalNavigationItems = [
   {
+    label: "Skills",
+    href: "/#skills",
+  },
+  {
     label: "Works",
     href: "/#works",
   },
   {
     label: "Profile",
     href: "/#profile",
-  },
-  {
-    label: "Skills",
-    href: "/#skills",
   },
   {
     label: "Contact",
