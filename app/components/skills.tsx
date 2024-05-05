@@ -183,7 +183,9 @@ export default function Skills() {
             </h3>
             <ul className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
               {item.skillItems.map((skill) => (
-                <SkillItem key={skill.label} skill={skill} />
+                <li key={skill.label}>
+                  <SkillItem skill={skill} />
+                </li>
               ))}
             </ul>
           </div>
