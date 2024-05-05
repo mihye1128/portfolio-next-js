@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import Section from "@/components/ui/section";
+
+export const metadata: Metadata = {
+  title: "お問い合わせ",
+};
 
 const contents = {
   title: "Contact",

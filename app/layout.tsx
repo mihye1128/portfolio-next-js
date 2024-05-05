@@ -5,8 +5,11 @@ import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 
 export const metadata: Metadata = {
-  title: "Mitsui's portfolio",
-  description: "Mitsui's portfolio",
+  title: {
+    template: "%s | Mitsui's portfolio",
+    default: "Mitsui's portfolio",
+  },
+  description: "フロントエンドエンジニア mitsuiのポートフォリオサイトです。",
 };
 
 export default function RootLayout({
