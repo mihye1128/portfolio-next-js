@@ -14,7 +14,7 @@ import {
   SiPhp,
   SiLocal,
   SiDocker,
-  SiVisualstudiocode,
+  // SiVscode,
   SiGit,
   SiAdobexd,
   SiFigma,
@@ -116,11 +116,11 @@ const contents = {
       {
         title: "Developer tools",
         skillItems: [
-          {
-            icon: <SiVisualstudiocode color="default" size={40} />,
-            label: "VSCode",
-            description: "コーディング時に採用しているエディタは、VSCodeです。",
-          },
+          // {
+          //   icon: <SiVscode color="default" size={40} />,
+          //   label: "VSCode",
+          //   description: "コーディング時に採用しているエディタは、VSCodeです。",
+          // },
           {
             icon: <SiGit color="default" size={40} />,
             label: "Git",
