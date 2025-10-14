@@ -3,7 +3,7 @@ import { Rajdhani } from "next/font/google";
 import { cn } from "@/lib/utils";
 import {
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiTailwindcss,
   SiAstro,
   SiTypescript,
@@ -16,7 +16,7 @@ import {
   SiDocker,
   // SiVscode,
   SiGit,
-  SiAdobexd,
+  // SiAdobexperiencedesign,
   SiFigma,
   SiJamstack,
   SiMake,
@@ -41,7 +41,7 @@ const contents = {
             description: "プリプロセッサ（EJS）を採用するケースもあります。",
           },
           {
-            icon: <SiCss3 color="default" size={40} />,
+            icon: <SiCss color="default" size={40} />,
             label: "CSS",
             description:
               "CSSフレームワークを採用しない場合、Sassを導入します。",
@@ -126,11 +126,11 @@ const contents = {
             label: "Git",
             description: "GitHub, Backlog, Bitbucketを利用した経験があります。",
           },
-          {
-            icon: <SiAdobexd color="default" size={40} />,
-            label: "Adobe XD",
-            description: "コーディングの際に必要な基本的な操作が可能です。",
-          },
+          // {
+          //   icon: <SiAdobexperiencedesign color="default" size={40} />,
+          //   label: "Adobe XD",
+          //   description: "コーディングの際に必要な基本的な操作が可能です。",
+          // },
           {
             icon: <SiFigma color="default" size={40} />,
             label: "Figma",
