@@ -1,5 +1,6 @@
 import { Rajdhani } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
@@ -8,8 +9,8 @@ export default function SkillItem({
 }: {
   skill: {
     label: string;
-    description: string | JSX.Element;
-    icon: JSX.Element;
+    description: string | ReactNode;
+    icon: ReactNode;
   };
 }) {
   return (

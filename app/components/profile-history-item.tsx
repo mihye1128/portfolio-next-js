@@ -1,4 +1,5 @@
 import { Rajdhani } from "next/font/google";
+import { ReactNode } from "react";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
@@ -7,7 +8,7 @@ export default function ProfileHistoryItem({
 }: {
   data: {
     title: string;
-    description: string | JSX.Element;
+    description: string | ReactNode;
   };
 }) {
   return (

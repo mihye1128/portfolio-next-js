@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Rajdhani } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
@@ -13,7 +14,7 @@ export default function WorkItem({
     description: string[];
     category: string;
     releaseDate: string;
-    skills: JSX.Element[];
+    skills: ReactNode[];
     image?: string;
     href?: string;
   };

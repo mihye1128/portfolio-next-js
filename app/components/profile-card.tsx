@@ -4,6 +4,7 @@ import { SiX, SiFacebook, SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 import { Rajdhani } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
@@ -12,7 +13,7 @@ export default function ProfileCard({
 }: {
   profile: {
     name: string;
-    description: string | JSX.Element;
+    description: string | ReactNode;
     sns?: {
       x?: string;
       facebook?: string;

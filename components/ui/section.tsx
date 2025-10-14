@@ -1,5 +1,6 @@
 import { Rajdhani } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
@@ -11,8 +12,8 @@ export default function Section({
 }: {
   id?: string;
   title: string;
-  description?: string | JSX.Element;
-  children: React.ReactNode;
+  description?: string | ReactNode;
+  children: ReactNode;
 }) {
   return (
     <section className="py-12 md:py-20" id={id}>
