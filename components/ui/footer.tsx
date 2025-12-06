@@ -12,7 +12,7 @@ export default function Footer() {
           "text-center text-sm tracking-wide",
         ])}
       >
-        &copy; 2024 Mitsui&apos;s portfolio.
+        &copy; 2025 Mitsui&apos;s portfolio.
       </p>
     </footer>
   );
