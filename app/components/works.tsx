@@ -17,8 +17,7 @@ import {
   SiMaterialdesign,
   SiFirebase,
   SiAlgolia,
-  SiWordpress,
-  SiPhp,
+  SiExpo,
 } from "@icons-pack/react-simple-icons";
 
 const contents = {
@@ -32,6 +31,22 @@ const contents = {
   ),
   content: {
     workItems: [
+      {
+        title: ["【非公開案件】", "ホテル会員向けアプリ"],
+        description: [
+          "React Nativeを採用したモバイルアプリ開発案件に参画。管理画面側はNext.jsを採用しました。",
+        ],
+        category: "モバイルアプリ開発（React Native）",
+        releaseDate: "2025年 3月頃",
+        skills: [
+          <SiExpo key={1} />,
+          <SiNextdotjs key={2} />,
+          <SiReact key={3} />,
+          <SiTypescript key={4} />,
+          <SiTailwindcss key={5} />,
+          <SiShadcnui key={6} />,
+        ],
+      },
       {
         title: ["Mitsui's portfolio", "ポートフォリオサイトリニューアル"],
         description: [
@@ -104,25 +119,6 @@ const contents = {
           <SiFirebase key={4} />,
           <SiAlgolia key={5} />,
         ],
-        image: "/images/works/tedori.png",
-        href: "https://tedori.dev/",
-      },
-      {
-        title: ["ナッツ工房メープル 様", "ECサイト リニューアル"],
-        description: [
-          "有料WordPressテーマとカートプラグインを利用し作成したECサイトです。",
-        ],
-        category: "WordPressテーマカスタマイズ",
-        releaseDate: "2019年 10月頃",
-        skills: [
-          <SiWordpress key={1} />,
-          <SiPhp key={2} />,
-          <SiJquery key={3} />,
-          <SiHtml5 key={4} />,
-          <SiCss key={5} />,
-        ],
-        image: "/images/works/maple.png",
-        href: "https://nutskobomaple.shop/",
       },
     ],
   },
