@@ -1,5 +1,5 @@
 {
-  "trailingComma": "all",
+  "trailingComma": "es5",
   "tabWidth": 2,
   "useTabs": false,
   "semi": true,
@@ -8,5 +8,6 @@
   "arrowParens": "always",
   "printWidth": 80,
   "bracketSpacing": true,
-  "plugins": []
+  "endOfLine": "lf",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

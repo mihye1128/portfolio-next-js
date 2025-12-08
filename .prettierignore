@@ -1,11 +1,47 @@
+# Dependencies
 node_modules
+
+# Build outputs
 .next
-.vercel
-public
+out
+build
 dist
 
-# Ignore dependency locks
+# Deployment
+.vercel
+
+# Generated files
+next-env.d.ts
+*.d.ts
+
+# Lock files
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
 bun.lockb
+*.lock
+
+# Cache
+.cache
+.turbo
+
+# Git
+.git
+
+# Environment files
+.env*
+
+# OS files
+.DS_Store
+
+# Public assets (images, fonts)
+public/**/*.png
+public/**/*.jpg
+public/**/*.jpeg
+public/**/*.gif
+public/**/*.webp
+public/**/*.svg
+public/**/*.woff
+public/**/*.woff2
+public/**/*.ttf
+public/**/*.eot
