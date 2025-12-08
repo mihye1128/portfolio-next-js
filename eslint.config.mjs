@@ -2,7 +2,6 @@ import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import nextPlugin from "@next/eslint-plugin-next";
-import tailwindcss from "eslint-plugin-tailwindcss";
 
 export default defineConfig([
   {
@@ -23,7 +22,6 @@ export default defineConfig([
     files: ["**/*.{js,jsx,ts,tsx}"],
     plugins: {
       "@next/next": nextPlugin,
-      tailwindcss: tailwindcss,
     },
     rules: {
       ...nextPlugin.configs.recommended.rules,
