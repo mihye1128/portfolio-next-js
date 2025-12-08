@@ -5,18 +5,20 @@ import {
   SiCloudflare,
   SiCss,
   SiDocker,
+  SiExpo,
   SiFigma,
   SiFirebase,
-  SiGit,
   SiHtml5,
-  SiJamstack,
   SiLocal,
   SiMake,
   SiNextdotjs,
   SiPhp,
   SiReact,
+  SiStimulus,
+  SiStorybook,
   SiTailwindcss,
   SiTypescript,
+  SiVitest,
   SiWordpress,
 } from "@icons-pack/react-simple-icons";
 import Section from "@/components/section";
@@ -32,12 +34,60 @@ interface SkillCategory {
 
 const SKILL_CATEGORIES: SkillCategory[] = [
   {
+    title: "JavaScript",
+    skillItems: [
+      {
+        icon: <SiTypescript color="default" size={40} />,
+        label: "TypeScript",
+        description:
+          "フレームワークを採用する際は、合わせてTypeScriptを採用します。",
+      },
+      {
+        icon: <SiReact color="default" size={40} />,
+        label: "React",
+        description: "React, React Nativeを使用した開発経験があります。",
+      },
+      {
+        icon: <SiNextdotjs size={40} />,
+        label: "Next.js",
+        description: "Next.js, TypeScriptを採用した開発経験があります。",
+      },
+      {
+        icon: <SiAngular size={40} />,
+        label: "Angular",
+        description: "Angular, AngularMaterialを採用した開発が可能です。",
+      },
+      {
+        icon: <SiExpo color="default" size={40} />,
+        label: "Expo",
+        description:
+          "React Nativeと組み合わせたモバイルアプリ開発経験があります。",
+      },
+      {
+        icon: <SiStorybook color="default" size={40} />,
+        label: "Storybook",
+        description: "UIコンポーネントの開発・管理に使用しています。",
+      },
+      {
+        icon: <SiVitest color="default" size={40} />,
+        label: "Vitest",
+        description: "ユニットテストのためのツールとして採用しています。",
+      },
+      {
+        icon: <SiStimulus color="default" size={40} />,
+        label: "Stimulus",
+        description:
+          "Ruby on Railsプロジェクトでのインタラクティブ機能の実装に使用しています。",
+      },
+    ],
+  },
+  {
     title: "Mark up",
     skillItems: [
       {
         icon: <SiHtml5 color="default" size={40} />,
         label: "HTML",
-        description: "プリプロセッサ（EJS）を採用するケースもあります。",
+        description: "プリプロセッサ（EJSなど）を採用するケースもあります。",
       },
       {
         icon: <SiCss color="default" size={40} />,
@@ -53,32 +103,6 @@ const SKILL_CATEGORIES: SkillCategory[] = [
         icon: <SiAstro color="default" size={40} />,
         label: "Astro",
         description: "静的サイト実装、JAMstackサイトの実装に採用します。",
-      },
-    ],
-  },
-  {
-    title: "JavaScript",
-    skillItems: [
-      {
-        icon: <SiTypescript color="default" size={40} />,
-        label: "TypeScript",
-        description:
-          "フレームワークを採用する際は、合わせてTypescriptを採用します。",
-      },
-      {
-        icon: <SiReact color="default" size={40} />,
-        label: "React",
-        description: "webサイト実装にて、採用することがあります。",
-      },
-      {
-        icon: <SiNextdotjs size={40} />,
-        label: "Next.js",
-        description: "Next.js, Typescriptを採用した開発経験があります。",
-      },
-      {
-        icon: <SiAngular size={40} />,
-        label: "Angular",
-        description: "Angular, AngularMaterialを採用した開発が可能です。",
       },
     ],
   },
@@ -111,27 +135,12 @@ const SKILL_CATEGORIES: SkillCategory[] = [
     ],
   },
   {
-    title: "Developer tools",
+    title: "Tools & Services",
     skillItems: [
-      {
-        icon: <SiGit color="default" size={40} />,
-        label: "Git",
-        description: "GitHub, Backlog, Bitbucketを利用した経験があります。",
-      },
       {
         icon: <SiFigma color="default" size={40} />,
         label: "Figma",
         description: "コーディングの際に必要な基本的な操作が可能です。",
-      },
-    ],
-  },
-  {
-    title: "Other",
-    skillItems: [
-      {
-        icon: <SiJamstack color="default" size={40} />,
-        label: "Jamstack",
-        description: "headlessCMSを使用した静的サイトの実装が可能です。",
       },
       {
         icon: <SiMake color="default" size={40} />,
@@ -141,12 +150,13 @@ const SKILL_CATEGORIES: SkillCategory[] = [
       {
         icon: <SiFirebase color="default" size={40} />,
         label: "Firebase",
-        description: "バックエンド開発の際に採用しています。",
+        description:
+          "モバイルアプリやWebアプリのバックエンドとして使用経験があります。",
       },
       {
         icon: <SiCloudflare color="default" size={40} />,
         label: "Cloudflare",
-        description: "Cloudflare Pagesを利用しています。",
+        description: "Cloudflare PagesおよびWorkersの使用経験があります。",
       },
     ],
   },
