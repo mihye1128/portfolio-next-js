@@ -9,7 +9,7 @@ const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
 export default function Header() {
   const headerContents = {
-    glovalNavigationItems: [
+    globalNavigationItems: [
       {
         label: "Skills",
         href: "/#skills",
@@ -48,7 +48,7 @@ export default function Header() {
         ])}
       >
         <ul className="hidden gap-1 text-sm tracking-wide sm:flex">
-          {headerContents.glovalNavigationItems.map((item) => (
+          {headerContents.globalNavigationItems.map((item) => (
             <li
               key={item.label}
               className={cn(["relative", "not-last:after:absolute"])}

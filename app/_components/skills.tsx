@@ -14,9 +14,7 @@ import {
   SiPhp,
   SiLocal,
   SiDocker,
-  // SiVscode,
   SiGit,
-  // SiAdobexperiencedesign,
   SiFigma,
   SiJamstack,
   SiMake,
@@ -117,22 +115,12 @@ export default function Skills() {
         {
           title: "Developer tools",
           skillItems: [
-            // {
-            //   icon: <SiVscode color="default" size={40} />,
-            //   label: "VSCode",
-            //   description: "コーディング時に採用しているエディタは、VSCodeです。",
-            // },
             {
               icon: <SiGit color="default" size={40} />,
               label: "Git",
               description:
                 "GitHub, Backlog, Bitbucketを利用した経験があります。",
             },
-            // {
-            //   icon: <SiAdobexperiencedesign color="default" size={40} />,
-            //   label: "Adobe XD",
-            //   description: "コーディングの際に必要な基本的な操作が可能です。",
-            // },
             {
               icon: <SiFigma color="default" size={40} />,
               label: "Figma",
@@ -146,7 +134,7 @@ export default function Skills() {
             {
               icon: <SiJamstack color="default" size={40} />,
               label: "Jamstack",
-              description: "headressCMSを使用した静的サイトの実装が可能です。",
+              description: "headlessCMSを使用した静的サイトの実装が可能です。",
             },
             {
               icon: <SiMake color="default" size={40} />,
