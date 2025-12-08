@@ -2,11 +2,7 @@ import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SiX, SiFacebook, SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
-import { Rajdhani } from "next/font/google";
-import { cn } from "@/lib/utils";
 import type { Profile } from "@/types";
-
-const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
 interface ProfileCardProps {
   profile: Profile;
@@ -15,12 +11,7 @@ interface ProfileCardProps {
 export default function ProfileCard({ profile }: ProfileCardProps) {
   return (
     <div className="rounded-xl border bg-card px-5 py-8 md:p-8 md:px-6">
-      <div
-        className={cn([
-          rajdhani.className,
-          "md:flex items-center md:gap-5 mb-6",
-        ])}
-      >
+      <div className="font-rajdhani md:flex items-center md:gap-5 mb-6">
         <Avatar className="mx-auto md:mx-0">
           <AvatarImage src="/images/profile/thumbnail.jpg" alt="@shadcn" />
           <AvatarFallback>{profile.name}</AvatarFallback>

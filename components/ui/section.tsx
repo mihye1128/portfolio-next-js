@@ -1,8 +1,4 @@
-import { Rajdhani } from "next/font/google";
-import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
-
-const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
 export default function Section({
   id,
@@ -19,12 +15,7 @@ export default function Section({
     <section className="py-12 md:py-20" id={id}>
       <div className="container">
         <div className="mb-6 grid gap-4 md:mb-12 md:gap-8">
-          <h2
-            className={cn([
-              rajdhani.className,
-              "text-center text-3xl leading-none font-bold uppercase",
-            ])}
-          >
+          <h2 className="font-rajdhani text-center text-3xl leading-none font-bold uppercase">
             {title}
           </h2>
           {description && (

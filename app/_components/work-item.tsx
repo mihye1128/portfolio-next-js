@@ -1,9 +1,6 @@
 import Link from "next/link";
-import { Rajdhani } from "next/font/google";
 import { cn } from "@/lib/utils";
 import type { Work } from "@/types";
-
-const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
 interface WorkItemProps {
   work: Work;
@@ -67,12 +64,7 @@ export default function WorkItem({ work }: WorkItemProps) {
           ])}
         >
           {!work.image && (
-            <p
-              className={cn([
-                rajdhani.className,
-                "absolute inset-0 bg-foreground/10 flex items-center justify-center tracking-wide",
-              ])}
-            >
+            <p className="font-rajdhani absolute inset-0 bg-foreground/10 flex items-center justify-center tracking-wide">
               Secret
             </p>
           )}

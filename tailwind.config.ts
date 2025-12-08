@@ -21,6 +21,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        rajdhani: ["var(--font-rajdhani)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

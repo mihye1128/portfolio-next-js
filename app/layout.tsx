@@ -9,6 +9,7 @@ import {
   SITE_DESCRIPTION,
   AUTHOR,
 } from "@/constants/site";
+import { rajdhani } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -49,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className="min-h-dvh">
+      <body className={`${rajdhani.variable} min-h-dvh`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

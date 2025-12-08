@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
+@theme inline {
+  --font-rajdhani: var(--font-rajdhani);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
