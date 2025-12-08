@@ -1,13 +1,12 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "@/constants/site";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://mitsui.site";
-
   return [
     {
-      url: baseUrl,
+      url: SITE_URL,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,

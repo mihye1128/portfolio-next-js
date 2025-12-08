@@ -4,28 +4,11 @@ import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/mode-toggle";
+import { SITE_NAME, AUTHOR, NAVIGATION_ITEMS } from "@/constants/site";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
 export default function Header() {
-  const headerContents = {
-    globalNavigationItems: [
-      {
-        label: "Skills",
-        href: "/#skills",
-      },
-      {
-        label: "Works",
-        href: "/#works",
-      },
-      {
-        label: "Profile",
-        href: "/#profile",
-      },
-    ],
-    githubUrl: "https://github.com/mihye1128/",
-  };
-
   return (
     <header className="sticky top-0 z-50 flex min-h-[60px] w-full items-center bg-background/90 px-5 py-2 md:px-6">
       <p
@@ -38,7 +21,7 @@ export default function Header() {
           href="/"
           className="-ml-4 block rounded-[2px] px-4 py-2 ring-offset-background transition-colors hover:text-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
-          Mitsui&apos;s portfolio
+          {SITE_NAME}
         </Link>
       </p>
       <nav
@@ -48,7 +31,7 @@ export default function Header() {
         ])}
       >
         <ul className="hidden gap-1 text-sm tracking-wide sm:flex">
-          {headerContents.globalNavigationItems.map((item) => (
+          {NAVIGATION_ITEMS.map((item) => (
             <li
               key={item.label}
               className={cn(["relative", "not-last:after:absolute"])}
@@ -63,11 +46,7 @@ export default function Header() {
           ))}
         </ul>
         <Button variant="ghost" size="icon" asChild>
-          <Link
-            href={headerContents.githubUrl}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          <Link href={AUTHOR.github} target="_blank" rel="noreferrer noopener">
             <SiGithub className="size-5" />
           </Link>
         </Button>

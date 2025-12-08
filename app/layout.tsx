@@ -3,14 +3,20 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import Header from "./_components/header";
 import Footer from "./_components/footer";
+import {
+  SITE_NAME,
+  SITE_URL,
+  SITE_DESCRIPTION,
+  AUTHOR,
+} from "@/constants/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mitsui.site"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    template: "%s | Mitsui's portfolio",
-    default: "Mitsui's portfolio",
+    template: `%s | ${SITE_NAME}`,
+    default: SITE_NAME,
   },
-  description: "フロントエンドエンジニア mitsuiのポートフォリオサイトです。",
+  description: SITE_DESCRIPTION,
   keywords: [
     "フロントエンドエンジニア",
     "Webエンジニア",
@@ -20,19 +26,19 @@ export const metadata: Metadata = {
     "ポートフォリオ",
     "Mitsui",
   ],
-  authors: [{ name: "Mitsui" }],
+  authors: [{ name: AUTHOR.name }],
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    url: "https://mitsui.site",
-    siteName: "Mitsui's portfolio",
-    title: "Mitsui's portfolio",
-    description: "フロントエンドエンジニア mitsuiのポートフォリオサイトです。",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    site: "@mitsui_mk",
-    creator: "@mitsui_mk",
+    site: AUTHOR.twitter,
+    creator: AUTHOR.twitter,
   },
 };
 
