@@ -1,9 +1,9 @@
-import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import nextPlugin from "@next/eslint-plugin-next";
+import prettierConfig from "eslint-config-prettier";
 
-export default defineConfig([
+export default [
   {
     ignores: [
       "**/node_modules/**",
@@ -11,13 +11,17 @@ export default defineConfig([
       "**/out/**",
       "**/public/**",
       "**/dist/**",
-      "**/tailwind.config.ts",
+      "**/build/**",
+      "**/.cache/**",
+      "**/.turbo/**",
       "**/next.config.mjs",
       "**/postcss.config.mjs",
+      "**/next-env.d.ts",
     ],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
+  prettierConfig,
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     plugins: {
@@ -29,4 +33,4 @@ export default defineConfig([
       "@typescript-eslint/triple-slash-reference": "off",
     },
   },
-]);
+];
