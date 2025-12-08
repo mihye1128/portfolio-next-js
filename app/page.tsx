@@ -1,7 +1,7 @@
-import Hero from "./components/hero";
-import Works from "./components/works";
-import Profile from "./components/profile";
-import Skills from "./components/skills";
+import Hero from "./_components/hero";
+import Works from "./_components/works";
+import Profile from "./_components/profile";
+import Skills from "./_components/skills";
 
 export default function Home() {
   return (

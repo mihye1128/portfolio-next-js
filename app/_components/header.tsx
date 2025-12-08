@@ -3,7 +3,7 @@ import { Rajdhani } from "next/font/google";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ModeToggle } from "../mode-toggle";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 const headerContents = {
