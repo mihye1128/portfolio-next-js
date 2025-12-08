@@ -163,7 +163,7 @@ export default function Skills() {
         {SKILL_CATEGORIES.map((item) => (
           <div key={item.title}>
             <h3 className="font-rajdhani mb-3 text-2xl">{item.title}</h3>
-            <ul className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {item.skillItems.map((skill) => (
                 <li key={skill.label}>
                   <SkillItem skill={skill} />

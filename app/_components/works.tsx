@@ -123,7 +123,7 @@ export default function Works() {
       description={WORKS_SECTION_DESCRIPTION}
       id="works"
     >
-      <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 md:gap-10">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
         {WORK_ITEMS.map((work, i) => (
           <WorkItem work={work} key={`work_${i}`} />
         ))}
