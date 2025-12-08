@@ -1,4 +1,4 @@
-import Section from "@/components/ui/section";
+import Section from "@/components/section";
 import ProfileHistoryItem from "./profile-history-item";
 import ProfileCard from "./profile-card";
 

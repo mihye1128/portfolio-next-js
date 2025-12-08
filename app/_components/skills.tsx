@@ -1,4 +1,4 @@
-import Section from "@/components/ui/section";
+import Section from "@/components/section";
 import type { Skill } from "@/types";
 import {
   SiHtml5,

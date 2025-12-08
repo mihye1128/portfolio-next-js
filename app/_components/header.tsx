@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/mode-toggle";
 import { SITE_NAME, AUTHOR, NAVIGATION_ITEMS } from "@/constants/site";
 
@@ -19,10 +18,7 @@ export default function Header() {
       <nav className="font-rajdhani ml-auto -mr-[10px] flex items-center gap-1">
         <ul className="hidden gap-1 text-sm tracking-wide sm:flex">
           {NAVIGATION_ITEMS.map((item) => (
-            <li
-              key={item.label}
-              className={cn(["relative", "not-last:after:absolute"])}
-            >
+            <li key={item.label}>
               <Link
                 href={item.href}
                 className="block rounded-[2px] px-3 py-2 ring-offset-background transition-colors hover:text-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"

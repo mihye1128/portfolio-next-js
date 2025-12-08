@@ -1,4 +1,4 @@
-import Section from "@/components/ui/section";
+import Section from "@/components/section";
 import WorkItem from "./work-item";
 import type { Work } from "@/types";
 import {

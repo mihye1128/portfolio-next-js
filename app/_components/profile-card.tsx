@@ -13,7 +13,7 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
     <div className="rounded-xl border bg-card px-5 py-8 md:p-8 md:px-6">
       <div className="font-rajdhani md:flex items-center md:gap-5 mb-6">
         <Avatar className="mx-auto md:mx-0">
-          <AvatarImage src="/images/profile/thumbnail.jpg" alt="@shadcn" />
+          <AvatarImage src="/images/profile/thumbnail.jpg" alt="" />
           <AvatarFallback>{profile.name}</AvatarFallback>
         </Avatar>
         <div className="text-center md:text-left">

@@ -1,16 +1,18 @@
 import { ReactNode } from "react";
 
+interface SectionProps {
+  id?: string;
+  title: string;
+  description?: string | ReactNode;
+  children: ReactNode;
+}
+
 export default function Section({
   id,
   title,
   description,
   children,
-}: {
-  id?: string;
-  title: string;
-  description?: string | ReactNode;
-  children: ReactNode;
-}) {
+}: SectionProps) {
   return (
     <section className="py-12 md:py-20" id={id}>
       <div className="container">
