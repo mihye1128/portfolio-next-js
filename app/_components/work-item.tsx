@@ -83,7 +83,7 @@ export default function WorkItem({ work }: WorkItemProps) {
         {work.skills && work.skills.length > 0 && (
           <ul className="absolute right-0 top-0 flex gap-2 px-4 py-2">
             {work.skills.map((skill, i) => (
-              <li key={`skill_${i}`} className="text-white [&>*]:w-5">
+              <li key={`skill_${i}`} className="text-white *:w-5">
                 {skill}
               </li>
             ))}

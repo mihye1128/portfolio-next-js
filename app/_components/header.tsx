@@ -51,10 +51,7 @@ export default function Header() {
           {headerContents.glovalNavigationItems.map((item) => (
             <li
               key={item.label}
-              className={cn([
-                "relative",
-                "[&:not(:last-child)]:after:absolute",
-              ])}
+              className={cn(["relative", "not-last:after:absolute"])}
             >
               <Link
                 href={item.href}
