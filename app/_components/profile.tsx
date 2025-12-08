@@ -1,6 +1,6 @@
 import Section from "@/components/section";
-import ProfileHistoryItem from "./profile-history-item";
 import ProfileCard from "./profile-card";
+import ProfileHistoryItem from "./profile-history-item";
 
 export default function Profile() {
   const contents = {

@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import Header from "./_components/header";
-import Footer from "./_components/footer";
+import { rajdhani } from "@/lib/fonts";
 import {
+  AUTHOR,
+  SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
-  SITE_DESCRIPTION,
-  AUTHOR,
 } from "@/constants/site";
-import { rajdhani } from "@/lib/fonts";
+import Footer from "./_components/footer";
+import Header from "./_components/header";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

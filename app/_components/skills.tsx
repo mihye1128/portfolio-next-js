@@ -1,25 +1,25 @@
-import Section from "@/components/section";
 import type { Skill } from "@/types";
 import {
-  SiHtml5,
-  SiCss,
-  SiTailwindcss,
-  SiAstro,
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
   SiAngular,
-  SiWordpress,
-  SiPhp,
-  SiLocal,
-  SiDocker,
-  SiGit,
-  SiFigma,
-  SiJamstack,
-  SiMake,
-  SiFirebase,
+  SiAstro,
   SiCloudflare,
+  SiCss,
+  SiDocker,
+  SiFigma,
+  SiFirebase,
+  SiGit,
+  SiHtml5,
+  SiJamstack,
+  SiLocal,
+  SiMake,
+  SiNextdotjs,
+  SiPhp,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiWordpress,
 } from "@icons-pack/react-simple-icons";
+import Section from "@/components/section";
 import SkillItem from "./skill-item";
 
 const SKILLS_SECTION_TITLE = "Skills";
@@ -162,7 +162,7 @@ export default function Skills() {
       <div className="grid gap-8">
         {SKILL_CATEGORIES.map((item) => (
           <div key={item.title}>
-            <h3 className="font-rajdhani text-2xl mb-3">{item.title}</h3>
+            <h3 className="font-rajdhani mb-3 text-2xl">{item.title}</h3>
             <ul className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
               {item.skillItems.map((skill) => (
                 <li key={skill.label}>

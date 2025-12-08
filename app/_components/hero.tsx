@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-r from-orange-500 to-yellow-400 py-24 text-center text-background">
+    <section className="text-background bg-linear-to-r from-orange-500 to-yellow-400 py-24 text-center">
       <div className="container">
         <h1 className="font-rajdhani mb-1 text-5xl">Mitsui&apos;s portfolio</h1>
         <p className="font-rajdhani mb-4">front-end engineer</p>

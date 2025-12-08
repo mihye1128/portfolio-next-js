@@ -6,8 +6,8 @@ interface SkillItemProps {
 
 export default function SkillItem({ skill }: SkillItemProps) {
   return (
-    <dl className="h-full rounded-sm border bg-card px-5 pb-6 pt-8 md:px-6">
-      <dt className="font-rajdhani text-center text-xl mb-2">
+    <dl className="bg-card h-full rounded-sm border px-5 pt-8 pb-6 md:px-6">
+      <dt className="font-rajdhani mb-2 text-center text-xl">
         <div className="mb-2 flex items-center justify-center">
           {skill.icon}
         </div>

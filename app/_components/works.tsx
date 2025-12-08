@@ -1,25 +1,25 @@
-import Section from "@/components/section";
-import WorkItem from "./work-item";
 import type { Work } from "@/types";
 import {
-  SiReact,
-  SiAstro,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiShadcnui,
-  SiTypescript,
-  SiMake,
-  SiHtml5,
-  SiCss,
-  SiJquery,
-  SiJavascript,
-  SiSass,
-  SiAngular,
-  SiMaterialdesign,
-  SiFirebase,
   SiAlgolia,
+  SiAngular,
+  SiAstro,
+  SiCss,
   SiExpo,
+  SiFirebase,
+  SiHtml5,
+  SiJavascript,
+  SiJquery,
+  SiMake,
+  SiMaterialdesign,
+  SiNextdotjs,
+  SiReact,
+  SiSass,
+  SiShadcnui,
+  SiTailwindcss,
+  SiTypescript,
 } from "@icons-pack/react-simple-icons";
+import Section from "@/components/section";
+import WorkItem from "./work-item";
 
 const WORKS_SECTION_TITLE = "Works";
 const WORKS_SECTION_DESCRIPTION = (
