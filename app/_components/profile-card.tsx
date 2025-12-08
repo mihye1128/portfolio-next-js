@@ -4,23 +4,15 @@ import { SiX, SiFacebook, SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 import { Rajdhani } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import type { Profile } from "@/types";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
-export default function ProfileCard({
-  profile,
-}: {
-  profile: {
-    name: string;
-    description: string | ReactNode;
-    sns?: {
-      x?: string;
-      facebook?: string;
-      github?: string;
-    };
-  };
-}) {
+interface ProfileCardProps {
+  profile: Profile;
+}
+
+export default function ProfileCard({ profile }: ProfileCardProps) {
   return (
     <div className="rounded-xl border bg-card px-5 py-8 md:p-8 md:px-6">
       <div

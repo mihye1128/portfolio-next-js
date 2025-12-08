@@ -1,24 +1,15 @@
 import Link from "next/link";
-
 import { Rajdhani } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import type { Work } from "@/types";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
-export default function WorkItem({
-  work,
-}: {
-  work: {
-    title: string[];
-    description: string[];
-    category: string;
-    releaseDate: string;
-    skills: ReactNode[];
-    image?: string;
-    href?: string;
-  };
-}) {
+interface WorkItemProps {
+  work: Work;
+}
+
+export default function WorkItem({ work }: WorkItemProps) {
   const thumbnailImage = work.image
     ? { backgroundImage: `url(${work.image})` }
     : {};

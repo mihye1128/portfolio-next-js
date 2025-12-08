@@ -1,18 +1,14 @@
 import { Rajdhani } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import type { Skill } from "@/types";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
 
-export default function SkillItem({
-  skill,
-}: {
-  skill: {
-    label: string;
-    description: string | ReactNode;
-    icon: ReactNode;
-  };
-}) {
+interface SkillItemProps {
+  skill: Skill;
+}
+
+export default function SkillItem({ skill }: SkillItemProps) {
   return (
     <dl className="h-full rounded-sm border bg-card px-5 pb-6 pt-8 md:px-6">
       <dt className={cn([rajdhani.className, "text-center text-xl mb-2"])}>

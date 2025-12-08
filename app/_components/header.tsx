@@ -6,29 +6,26 @@ import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/mode-toggle";
 
 const rajdhani = Rajdhani({ weight: "400", subsets: ["latin"] });
-const headerContents = {
-  glovalNavigationItems: [
-    {
-      label: "Skills",
-      href: "/#skills",
-    },
-    {
-      label: "Works",
-      href: "/#works",
-    },
-    {
-      label: "Profile",
-      href: "/#profile",
-    },
-    // {
-    //   label: "Contact",
-    //   href: "/contact",
-    // },
-  ],
-  githubUrl: "https://github.com/mihye1128/",
-};
 
 export default function Header() {
+  const headerContents = {
+    glovalNavigationItems: [
+      {
+        label: "Skills",
+        href: "/#skills",
+      },
+      {
+        label: "Works",
+        href: "/#works",
+      },
+      {
+        label: "Profile",
+        href: "/#profile",
+      },
+    ],
+    githubUrl: "https://github.com/mihye1128/",
+  };
+
   return (
     <header className="sticky top-0 z-50 flex min-h-[60px] w-full items-center bg-background/90 px-5 py-2 md:px-6">
       <p
