@@ -1,9 +1,0 @@
-node_modules
-.next
-out
-public
-dist
-
-tailwind.config.ts
-next.config.mjs
-postcss.config.mjs
