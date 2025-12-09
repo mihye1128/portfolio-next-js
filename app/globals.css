@@ -127,5 +127,26 @@
 }
 
 @utility container {
-  @apply mx-auto w-full max-w-6xl px-5 sm:px-10;
+  @apply mx-auto w-full max-w-5xl px-5 sm:px-10;
+}
+
+@layer utilities {
+  .text-nextjs {
+    color: #000000;
+  }
+
+  .text-angular {
+    color: #0f0f11;
+  }
+
+  .text-expo {
+    color: #1c2024;
+  }
+  .dark {
+    & .text-nextjs,
+    & .text-angular,
+    & .text-expo {
+      color: var(--background);
+    }
+  }
 }
