@@ -1,10 +1,12 @@
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface SectionProps {
   id?: string;
   title: string;
   description?: string | ReactNode;
   children: ReactNode;
+  className?: string;
 }
 
 export default function Section({
@@ -12,9 +14,10 @@ export default function Section({
   title,
   description,
   children,
+  className,
 }: SectionProps) {
   return (
-    <section className="py-12 md:py-20" id={id}>
+    <section className={cn("py-12 md:py-20", className)} id={id}>
       <div className="container">
         <div className="mb-6 grid gap-4 md:mb-12 md:gap-8">
           <h2 className="font-rajdhani text-center text-3xl leading-none font-bold uppercase">
