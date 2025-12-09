@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Work } from "@/types";
+import { ExternalLink } from "lucide-react";
 
 interface WorkItemProps {
   work: Work;
@@ -30,16 +31,17 @@ export default function WorkItem({ work, isLast = false }: WorkItemProps) {
                 href={work.href}
                 rel="noreferrer noopener"
                 target="_blank"
-                className="hover:text-primary transition-colors focus-visible:underline focus-visible:outline-none"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-orange-500 focus-visible:underline focus-visible:outline-none"
               >
                 {work.title}
+                <ExternalLink className="h-4 w-4" />
               </Link>
             ) : (
               work.title
             )}
           </h3>
 
-          <p className="bg-foreground/90 text-background mb-3 inline-block rounded-sm px-2 py-1 text-xs">
+          <p className="bg-foreground text-background mb-3 inline-block rounded-sm px-2 py-1 text-xs">
             {work.category}
           </p>
 
