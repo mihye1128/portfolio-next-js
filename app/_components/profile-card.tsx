@@ -10,14 +10,14 @@ interface ProfileCardProps {
 
 export default function ProfileCard({ profile }: ProfileCardProps) {
   return (
-    <div className="bg-card rounded-xl border px-5 py-8 md:p-8 md:px-6">
-      <div className="font-rajdhani mb-6 items-center md:flex md:gap-5">
-        <Avatar className="mx-auto md:mx-0">
+    <div className="bg-card rounded-xl border px-5 py-8 md:grid md:grid-cols-[auto_1fr] md:items-center md:gap-6 md:py-8 md:pr-16 md:pl-8">
+      <div className="font-rajdhani mb-6 items-center md:mb-0 md:min-w-56">
+        <Avatar className="mx-auto mb-3">
           <AvatarImage src="/images/profile/thumbnail.jpg" alt="" />
           <AvatarFallback>{profile.name}</AvatarFallback>
         </Avatar>
-        <div className="text-center md:text-left">
-          <p className="text-xl md:pl-[10px]">{profile.name}</p>
+        <div className="text-center">
+          <p className="text-xl">{profile.name}</p>
           {profile.sns && (
             <div>
               {profile.sns?.x && (
@@ -57,7 +57,7 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
           )}
         </div>
       </div>
-      <div className="grid gap-2 text-sm leading-[1.75]">
+      <div className="grid gap-2 text-sm leading-loose">
         {profile.description}
       </div>
     </div>
