@@ -9,7 +9,7 @@ interface WorkItemProps {
 export default function WorkItem({ work, isLast = false }: WorkItemProps) {
   return (
     <article className="grid grid-cols-1 md:grid-cols-[140px_1fr] md:gap-8">
-      <div className="font-rajdhani hidden pt-1 text-right text-base font-semibold tracking-wide md:block">
+      <div className="font-rajdhani hidden text-right text-base leading-tight font-semibold tracking-wide md:block">
         {work.period}
       </div>
 
@@ -17,7 +17,7 @@ export default function WorkItem({ work, isLast = false }: WorkItemProps) {
         {!isLast && (
           <div className="bg-border absolute top-0 left-0 h-full w-px"></div>
         )}
-        <div className="bg-primary ring-background absolute top-2 left-0 h-2 w-2 -translate-x-1/2 rounded-full ring-4"></div>
+        <div className="bg-primary ring-background absolute top-1.5 left-0 h-2 w-2 -translate-x-1/2 rounded-full ring-4"></div>
 
         <div className="pl-6 md:pl-8">
           <div className="font-rajdhani mb-2 text-sm font-semibold tracking-wide md:hidden">
@@ -52,10 +52,7 @@ export default function WorkItem({ work, isLast = false }: WorkItemProps) {
           {work.skills && work.skills.length > 0 && (
             <ul className="flex flex-wrap gap-2">
               {work.skills.map((skill, i) => (
-                <li
-                  key={`skill_${i}`}
-                  className="text-muted-foreground *:h-5 *:w-5"
-                >
+                <li key={`skill_${i}`} className="opacity-80 *:h-5 *:w-5">
                   {skill}
                 </li>
               ))}
