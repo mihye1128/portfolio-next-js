@@ -1,86 +1,67 @@
 import Link from "next/link";
 import type { Work } from "@/types";
-import { cn } from "@/lib/utils";
 
 interface WorkItemProps {
   work: Work;
+  isLast?: boolean;
 }
 
-export default function WorkItem({ work }: WorkItemProps) {
-  const thumbnailImage = work.image
-    ? { backgroundImage: `url(${work.image})` }
-    : {};
+export default function WorkItem({ work, isLast = false }: WorkItemProps) {
   return (
-    <article
-      className={cn([
-        "bg-card group relative row-span-4 grid grid-rows-subgrid gap-2 rounded-xl border pb-6 shadow",
-        work.href
-          ? "transition-shadow hover:cursor-pointer hover:shadow-lg"
-          : "",
-      ])}
-    >
-      <h3 className="order-2 px-5 pt-6 font-bold md:px-6">
-        {work.href ? (
-          <Link
-            href={work.href}
-            rel="noreferrer noopener"
-            target="_blank"
-            className="group focus-visible:outline-none"
-          >
-            {work.title.map((item, j) => (
-              <span key={`title_${j}`} className="block">
-                {item}
-              </span>
-            ))}
-            <span className="group-focus-visible:ring-ring dark:group-focus-visible:ring-offset-background absolute inset-0 z-10 block rounded-xl transition-colors group-focus-visible:ring-2 group-focus-visible:ring-offset-2 group-focus-visible:outline-none"></span>
-          </Link>
-        ) : (
-          <>
-            {work.title.map((item, j) => (
-              <span key={`title_${j}`} className="block">
-                {item}
-              </span>
-            ))}
-          </>
-        )}
-      </h3>
-      <div className="order-3 px-5 text-sm leading-[1.75] md:px-6">
-        {work.description.map((item, j) => (
-          <p key={`description_${j}`}>{item}</p>
-        ))}
+    <article className="grid grid-cols-1 md:grid-cols-[140px_1fr] md:gap-8">
+      <div className="font-rajdhani hidden pt-1 text-right text-base font-semibold tracking-wide md:block">
+        {work.period}
       </div>
-      <dl className="order-4 flex items-center px-5 text-sm md:px-6">
-        <dt className="bg-foreground/10 mr-3 rounded-sm px-2 py-[2px]">
-          公開時期
-        </dt>
-        <dd>{work.releaseDate}</dd>
-      </dl>
-      <div className="relative order-1 overflow-hidden rounded-t-xl">
-        <div
-          style={thumbnailImage}
-          className={cn([
-            "after:bg-foreground/20 dark:after:bg-background/20 relative aspect-video w-full bg-cover after:absolute after:inset-0 after:content-['']",
-            work.href ? "duration-150 group-hover:scale-110" : "",
-          ])}
-        >
-          {!work.image && (
-            <p className="font-rajdhani bg-foreground/10 absolute inset-0 flex items-center justify-center tracking-wide">
-              Secret
-            </p>
+
+      <div className="relative pb-12">
+        {!isLast && (
+          <div className="bg-border absolute top-0 left-0 h-full w-px"></div>
+        )}
+        <div className="bg-primary ring-background absolute top-2 left-0 h-2 w-2 -translate-x-1/2 rounded-full ring-4"></div>
+
+        <div className="pl-6 md:pl-8">
+          <div className="font-rajdhani mb-2 text-sm font-semibold tracking-wide md:hidden">
+            {work.period}
+          </div>
+
+          <h3 className="mb-2 leading-tight font-bold">
+            {work.href ? (
+              <Link
+                href={work.href}
+                rel="noreferrer noopener"
+                target="_blank"
+                className="hover:text-primary transition-colors focus-visible:underline focus-visible:outline-none"
+              >
+                {work.title}
+              </Link>
+            ) : (
+              work.title
+            )}
+          </h3>
+
+          <p className="bg-foreground/90 text-background mb-3 inline-block rounded-sm px-2 py-1 text-xs">
+            {work.category}
+          </p>
+
+          <div className="mb-4 text-sm leading-relaxed">
+            {work.description.map((item, j) => (
+              <p key={`description_${j}`}>{item}</p>
+            ))}
+          </div>
+
+          {work.skills && work.skills.length > 0 && (
+            <ul className="flex flex-wrap gap-2">
+              {work.skills.map((skill, i) => (
+                <li
+                  key={`skill_${i}`}
+                  className="text-muted-foreground *:h-5 *:w-5"
+                >
+                  {skill}
+                </li>
+              ))}
+            </ul>
           )}
         </div>
-        <p className="bg-foreground/90 text-background absolute bottom-0 left-0 rounded-tr-sm px-3 py-1 text-sm">
-          {work.category}
-        </p>
-        {work.skills && work.skills.length > 0 && (
-          <ul className="absolute top-0 right-0 flex gap-2 px-4 py-2">
-            {work.skills.map((skill, i) => (
-              <li key={`skill_${i}`} className="text-white *:w-5">
-                {skill}
-              </li>
-            ))}
-          </ul>
-        )}
       </div>
     </article>
   );

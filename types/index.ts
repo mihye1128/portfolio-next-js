@@ -4,10 +4,10 @@ import { ReactNode } from "react";
  * Work（実績）の型定義
  */
 export interface Work {
-  title: string[];
+  title: string;
   description: string[];
   category: string;
-  releaseDate: string;
+  period: string;
   skills: ReactNode[];
   image?: string;
   href?: string;
@@ -38,12 +38,4 @@ export interface Profile {
   name: string;
   description: string | ReactNode;
   sns?: SnsLinks;
-}
-
-/**
- * ProfileHistory（経歴）の型定義
- */
-export interface ProfileHistory {
-  title: string;
-  description: string | ReactNode;
 }

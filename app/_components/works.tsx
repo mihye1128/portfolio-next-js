@@ -12,11 +12,18 @@ import {
   SiMake,
   SiMaterialdesign,
   SiNextdotjs,
+  SiPhp,
   SiReact,
-  SiSass,
+  SiRuby,
+  SiRubyonrails,
   SiShadcnui,
+  SiStimulus,
+  SiStorybook,
   SiTailwindcss,
   SiTypescript,
+  SiVitest,
+  SiVuedotjs,
+  SiWordpress,
 } from "@icons-pack/react-simple-icons";
 import Section from "@/components/section";
 import WorkItem from "./work-item";
@@ -24,38 +31,65 @@ import WorkItem from "./work-item";
 const WORKS_SECTION_TITLE = "Works";
 const WORKS_SECTION_DESCRIPTION = (
   <>
-    制作・開発に携わった案件を一部ご紹介致します。
+    これまでに参画した主要なプロジェクトを
     <br />
-    守秘義務の都合上、公開できない案件が多数あります。
+    一部抜粋してご紹介いたします。
   </>
 );
 
 const WORK_ITEMS: Work[] = [
   {
-    title: ["【非公開案件】", "ホテル会員向けアプリ"],
+    title: "転職情報メディアサイトの開発",
     description: [
-      "React Nativeを採用したモバイルアプリ開発案件に参画。管理画面側はNext.jsを採用しました。",
+      "Next.js, MicroCMSを使用した転職情報メディアサイト開発を担当。",
+      "Storybookでのコンポーネント管理、Vitestでのテストを実装。",
     ],
-    category: "モバイルアプリ開発（React Native）",
-    releaseDate: "2025年 3月頃",
+    category: "メディアサイト開発（Next.js）",
+    period: "2025.11 -",
     skills: [
-      <SiExpo />,
-      <SiNextdotjs />,
-      <SiReact />,
       <SiTypescript />,
-      <SiTailwindcss />,
-      <SiShadcnui />,
+      <SiReact />,
+      <SiNextdotjs />,
+      <SiStorybook />,
+      <SiVitest />,
     ],
   },
   {
-    title: ["Mitsui's portfolio", "ポートフォリオサイトリニューアル"],
-    description: ["当サイトです。フレームワークにNext.jsを使用しています。"],
-    category: "個人開発（Next.js）",
-    releaseDate: "2024年 5月頃",
+    title: "転職支援プラットフォーム開発",
+    description: [
+      "Ruby on Rails, Turbo Rails, Stimulus.jsを使用した転職支援プラットフォーム開発のUI実装を担当。求人情報検索、適職診断、求職者管理画面などを実装。",
+    ],
+    category: "Webアプリ開発（Ruby on Rails）",
+    period: "2025.04 -",
+    skills: [<SiRuby />, <SiRubyonrails />, <SiJavascript />, <SiStimulus />],
+  },
+  {
+    title: "ホテル会員向けアプリ",
+    description: [
+      "モバイルアプリ開発、及びアプリ管理画面開発に参画。",
+      "モバイルアプリ開発には、React Native, Expoを採用。管理画面側はNext.jsを採用。",
+    ],
+    category: "モバイルアプリ開発（React Native）",
+    period: "2024.12 - 2025.03",
     skills: [
-      <SiNextdotjs />,
-      <SiReact />,
       <SiTypescript />,
+      <SiReact />,
+      <SiExpo />,
+      <SiNextdotjs />,
+      <SiTailwindcss />,
+      <SiShadcnui />,
+      <SiFirebase />,
+    ],
+  },
+  {
+    title: "ポートフォリオサイトリニューアル",
+    description: ["当サイト。フレームワークにNext.jsを採用。"],
+    category: "個人開発（Next.js）",
+    period: "2024.05",
+    skills: [
+      <SiTypescript />,
+      <SiReact />,
+      <SiNextdotjs />,
       <SiTailwindcss />,
       <SiShadcnui />,
     ],
@@ -63,55 +97,80 @@ const WORK_ITEMS: Work[] = [
     href: "https://github.com/mihye1128/portfolio-next-js",
   },
   {
-    title: ["【非公開案件】", "サービスサイトリプレース"],
+    title: "サービスサイトリプレース・保守",
     description: [
-      "WordPressサイトをAstroを採用した静的サイトへリプレースしました。",
+      "WordPressで構築されたサイトの静的サイトへのリプレースを担当。",
+      "引き続きWordPressを使用するサイトにはShifterを導入。",
+      "その他はAstroを採用し静的サイトへリプレース。",
+      "Algoliaを用いた検索機能の実装や、Salesforceなどへの外部連携も担当。",
     ],
     category: "サイトリプレース（Astro）",
-    releaseDate: "2024年 3月頃",
+    period: "2022.09 - 2024.11",
     skills: [
-      <SiAstro />,
-      <SiReact />,
       <SiTypescript />,
-      <SiMake />,
+      <SiReact />,
+      <SiAstro />,
       <SiTailwindcss />,
+      <SiMake />,
+      <SiAlgolia />,
     ],
   },
   {
-    title: ["【非公開案件】", "セミナー購入サイトテンプレート制作"],
+    title: "販売管理システム開発",
     description: [
-      "Makeshopテンプレートのカスタマイズを行い、オリジナルサイトを作成しました。",
-    ],
-    category: "Makeshopテンプレートカスタマイズ",
-    releaseDate: "2024年 2月頃",
-    skills: [
-      <SiSass />,
-      <SiJquery />,
-      <SiJavascript />,
-      <SiHtml5 />,
-      <SiCss />,
-    ],
-  },
-  {
-    title: ["【非公開案件】", "販売管理システム開発"],
-    description: [
-      "Angular, AngularMaterialを採用した案件にて、フロントエンドの実装を担当しました。",
+      "Angular, AngularMaterialを採用した案件にて、フロントエンドの実装を担当。",
     ],
     category: "システム開発(Angular）",
-    releaseDate: "（未定）",
-    skills: [<SiAngular />, <SiTypescript />, <SiMaterialdesign />],
+    period: "2021.12 - 2022.06",
+    skills: [<SiTypescript />, <SiAngular />, <SiMaterialdesign />],
   },
   {
-    title: ["TEDORI", "給与試算ツール開発"],
-    description: ["Angular, Firebase, Algoliaを用いて開発しました。", ""],
-    category: "個人開発(Angular)",
-    releaseDate: "2020年 11月頃",
+    title: "ビジネスマッチングアプリ開発 ",
+    description: ["小規模チームのWebディレクションを担当。"],
+    category: "システム開発(Angular)",
+    period: "2021.04 - 2021.09",
     skills: [
-      <SiAngular />,
       <SiTypescript />,
+      <SiAngular />,
       <SiMaterialdesign />,
       <SiFirebase />,
       <SiAlgolia />,
+    ],
+  },
+  {
+    title: "各種サイトのリプレース・保守 ",
+    description: [
+      "フリーランスのフロントエンドエンジニアとして活動開始。",
+      "WordPressやMakeshopなどのテーマ開発案件へ参画。",
+    ],
+    category: "Webサイト制作(WordPress)",
+    period: "2019.04 - 2021.03",
+    skills: [
+      <SiJavascript />,
+      <SiPhp />,
+      <SiHtml5 />,
+      <SiCss />,
+      <SiWordpress />,
+      <SiJquery />,
+      <SiReact />,
+      <SiVuedotjs />,
+    ],
+  },
+  {
+    title: "各種サイトのリプレース・保守 ",
+    description: [
+      "Webアプリ開発・Web制作会社へ就職。",
+      "主にHTML/CSSコーディング、WordPressテーマ作成業務を担当。",
+    ],
+    category: "サイトリプレース(WordPress)",
+    period: "2018.03 - 2019.03",
+    skills: [
+      <SiJavascript />,
+      <SiPhp />,
+      <SiHtml5 />,
+      <SiCss />,
+      <SiWordpress />,
+      <SiJquery />,
     ],
   },
 ];
@@ -123,9 +182,13 @@ export default function Works() {
       description={WORKS_SECTION_DESCRIPTION}
       id="works"
     >
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+      <div className="mx-auto max-w-3xl">
         {WORK_ITEMS.map((work, i) => (
-          <WorkItem work={work} key={`work_${i}`} />
+          <WorkItem
+            work={work}
+            key={`work_${i}`}
+            isLast={i === WORK_ITEMS.length - 1}
+          />
         ))}
       </div>
     </Section>
