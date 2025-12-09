@@ -39,7 +39,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
       {
         icon: <SiTypescript color="default" size={40} />,
         label: "TypeScript",
-        description: "型安全な開発に活用しています。",
+        description: "型安全を考慮し、基本的にTypeScriptを採用します。",
       },
       {
         icon: <SiReact color="default" size={40} />,
@@ -59,7 +59,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
       {
         icon: <SiExpo className="text-expo" size={40} />,
         label: "Expo",
-        description: "モバイルアプリ開発に使用しました。",
+        description: "Expoを採用したモバイルアプリ開発経験があります。",
       },
       {
         icon: <SiStorybook color="default" size={40} />,
@@ -74,7 +74,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
       {
         icon: <SiStimulus color="default" size={40} />,
         label: "Stimulus",
-        description: "Rails環境で動的UI実装に使用しています。",
+        description: "Rails環境で動的UI実装に使用した経験があります。",
       },
     ],
   },

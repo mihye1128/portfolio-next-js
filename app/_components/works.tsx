@@ -66,8 +66,9 @@ const WORK_ITEMS: Work[] = [
   {
     title: "ホテル会員向けアプリ",
     description: [
-      "モバイルアプリ開発、及びアプリ管理画面開発に参画。",
-      "モバイルアプリ開発には、React Native, Expoを採用。管理画面側はNext.jsを採用。",
+      "ホテル会員向けスマホアプリおよび管理画面の新規開発に参画。",
+      "モバイルアプリは React Native + Expo を用いて実装。",
+      "管理画面は Next.js を採用し、UI実装やコードレビューを担当。",
     ],
     category: "モバイルアプリ開発（React Native）",
     period: "2024.12 - 2025.03",
@@ -101,7 +102,7 @@ const WORK_ITEMS: Work[] = [
     description: [
       "WordPressで構築されたサイトの静的サイトへのリプレースを担当。",
       "引き続きWordPressを使用するサイトにはShifterを導入。",
-      "その他はAstroを採用し静的サイトへリプレース。",
+      "その他はAstroを採用し、静的サイトへリプレース。",
       "Algoliaを用いた検索機能の実装や、Salesforceなどへの外部連携も担当。",
     ],
     category: "サイトリプレース（Astro）",
@@ -126,7 +127,10 @@ const WORK_ITEMS: Work[] = [
   },
   {
     title: "ビジネスマッチングアプリ開発 ",
-    description: ["小規模チームのWebディレクションを担当。"],
+    description: [
+      "ビジネスマッチングアプリの開発プロジェクトにディレクターとして参画。",
+      "エンジニアのタスク管理、クライアントMTG、コードレビューなどの品質管理を担当。",
+    ],
     category: "システム開発(Angular)",
     period: "2021.04 - 2021.09",
     skills: [
@@ -142,6 +146,7 @@ const WORK_ITEMS: Work[] = [
     description: [
       "フリーランスのフロントエンドエンジニアとして活動開始。",
       "WordPressやMakeshopなどのテーマ開発案件へ参画。",
+      "ECサイトの開発や求人ポータルのテーマ開発などを担当。",
     ],
     category: "Webサイト制作(WordPress)",
     period: "2019.04 - 2021.03",
