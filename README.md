@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Website
 
-## Getting Started
+個人ポートフォリオサイトのソースコードです。
 
-First, run the development server:
+## 技術スタック
+
+### フレームワーク・ライブラリ
+
+- **Next.js 16** - React フレームワーク（App Router使用）
+- **React 19** - UIライブラリ
+- **TypeScript 5** - 型安全な開発環境
+
+### スタイリング
+
+- **Tailwind CSS 4** - ユーティリティファーストCSSフレームワーク
+- **Radix UI** - アクセシブルなUIコンポーネント
+- **next-themes** - ダークモード対応
+- **lucide-react** - アイコンライブラリ
+- **class-variance-authority** - コンポーネントのバリアント管理
+
+### 開発環境・品質管理
+
+- **ESLint** - コード品質チェック
+- **Prettier** - コードフォーマッター
+- **Husky** - Git hooksによる自動チェック
+- **lint-staged** - ステージングファイルの自動lint/format
+- **Storybook** - UIコンポーネントカタログ（導入予定）
+- **Vitest** - テストフレームワーク（導入予定）
+
+## 主な機能
+
+- **レスポンシブデザイン**: モバイル・タブレット・デスクトップに対応
+- **ダークモード**: ライト/ダークテーマの切り替え
+- **コンポーネント設計**: 再利用可能なUIコンポーネント
+- **型安全性**: TypeScriptによる堅牢な実装
+- **アクセシビリティ**: Radix UIによるWCAG準拠
+
+## セットアップ
 
 ```bash
+# 依存パッケージのインストール
+npm install
+
+# 開発サーバーの起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いてアプリケーションを確認できます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 開発コマンド
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+# 開発サーバーの起動
+npm run dev
 
-## Learn More
+# プロダクションビルド
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# プロダクションサーバーの起動
+npm start
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# ESLintによるコードチェック
+npm run lint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# ESLintによる自動修正
+npm run lint:fix
 
-## Deploy on Vercel
+# Prettierによるフォーマット
+npm run format
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Storybookの起動 （導入予定）
+npm run storybook
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Storybookのビルド （導入予定）
+npm run build-storybook
+```
+
+## プロジェクト構造
+
+```
+portfolio-next-js/
+├── app/
+│   ├── _components/      # ページコンポーネント
+│   ├── layout.tsx        # ルートレイアウト
+│   └── page.tsx          # トップページ
+├── components/
+│   └── ui/               # 共通UIコンポーネント
+├── .storybook/           # Storybook設定 （導入予定）
+└── stories/              # Storybookストーリー （導入予定）
+```
+
+## コード品質管理
+
+このプロジェクトでは以下のツールでコード品質を管理しています:
+
+- **ESLint**: Next.js、TypeScript、Storybookの推奨ルールを適用
+- **Prettier**: 一貫したコードフォーマット
+- **Husky + lint-staged**: コミット前の自動チェック
+
+コミット時に自動的にlintとformatが実行されます。
+
+## Storybook（導入予定）
+
+UIコンポーネントはStorybookで管理予定
+
+```bash
+npm run storybook
+```
+
+[http://localhost:6006](http://localhost:6006) でコンポーネントカタログを確認できます。
