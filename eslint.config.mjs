@@ -16,6 +16,7 @@ export default [{
     "**/build/**",
     "**/.cache/**",
     "**/.turbo/**",
+    "**/storybook-static/**",
     "**/next.config.mjs",
     "**/postcss.config.mjs",
     "**/next-env.d.ts",
