@@ -24,7 +24,7 @@
 - **Prettier** - コードフォーマッター
 - **Husky** - Git hooksによる自動チェック
 - **lint-staged** - ステージングファイルの自動lint/format
-- **Storybook** - UIコンポーネントカタログ（導入予定）
+- **Storybook** - UIコンポーネントカタログ
 - **Vitest** - テストフレームワーク（導入予定）
 
 ## 主な機能
@@ -68,10 +68,10 @@ npm run lint:fix
 # Prettierによるフォーマット
 npm run format
 
-# Storybookの起動 （導入予定）
+# Storybookの起動
 npm run storybook
 
-# Storybookのビルド （導入予定）
+# Storybookのビルド
 npm run build-storybook
 ```
 
@@ -85,8 +85,8 @@ portfolio-next-js/
 │   └── page.tsx          # トップページ
 ├── components/
 │   └── ui/               # 共通UIコンポーネント
-├── .storybook/           # Storybook設定 （導入予定）
-└── stories/              # Storybookストーリー （導入予定）
+├── .storybook/           # Storybook設定
+└── stories/              # Storybookストーリー
 ```
 
 ## コード品質管理
@@ -99,9 +99,9 @@ portfolio-next-js/
 
 コミット時に自動的にlintとformatが実行されます。
 
-## Storybook（導入予定）
+## Storybook
 
-UIコンポーネントはStorybookで管理予定
+UIコンポーネントはStorybookで管理しています。
 
 ```bash
 npm run storybook
