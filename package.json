@@ -10,6 +10,8 @@
     "lint": "eslint --ext '.js,.ts,.jsx,.tsx' .",
     "lint:fix": "eslint --ext '.js,.ts,.jsx,.tsx' --fix .",
     "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run",
     "format": "prettier --write '**/*.{js,ts,jsx,tsx,json}'",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
