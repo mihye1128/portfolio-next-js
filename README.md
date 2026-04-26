@@ -8,7 +8,7 @@
 
 - **Next.js 16** - React フレームワーク（App Router使用）
 - **React 19** - UIライブラリ
-- **TypeScript 5** - 型安全な開発環境
+- **TypeScript 6** - 型安全な開発環境
 
 ### スタイリング
 
@@ -25,7 +25,7 @@
 - **Husky** - Git hooksによる自動チェック
 - **lint-staged** - ステージングファイルの自動lint/format
 - **Storybook** - UIコンポーネントカタログ
-- **Vitest** - テストフレームワーク（導入予定）
+- **Vitest** - テストフレームワーク
 
 ## 主な機能
 
@@ -65,8 +65,17 @@ npm run lint
 # ESLintによる自動修正
 npm run lint:fix
 
+# TypeScriptの型チェック
+npm run typecheck
+
 # Prettierによるフォーマット
 npm run format
+
+# テスト（watchモード）
+npm run test
+
+# テスト（一回のみ実行）
+npm run test:run
 
 # Storybookの起動
 npm run storybook
@@ -97,7 +106,10 @@ portfolio-next-js/
 - **Prettier**: 一貫したコードフォーマット
 - **Husky + lint-staged**: コミット前の自動チェック
 
-コミット時に自動的にlintとformatが実行されます。
+コミット時に以下が自動的に実行されます:
+
+- `lint-staged` によるステージファイルのlint/format
+- `tsc --noEmit` による型チェック
 
 ## Storybook
 
@@ -108,3 +120,15 @@ npm run storybook
 ```
 
 [http://localhost:6006](http://localhost:6006) でコンポーネントカタログを確認できます。
+
+## テスト
+
+Vitestでユニットテストを実行できます。テストファイルは `**/*.test.{ts,tsx}` で配置します。
+
+```bash
+# watchモードで実行
+npm run test
+
+# 一回だけ実行（CI向け）
+npm run test:run
+```
