@@ -19,6 +19,10 @@ export const NAVIGATION_ITEMS = [
     href: "/#skills",
   },
   {
+    label: "Philosophy",
+    href: "/#philosophy",
+  },
+  {
     label: "Works",
     href: "/#works",
   },

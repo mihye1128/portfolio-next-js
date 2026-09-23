@@ -40,6 +40,15 @@ export interface SkillTag {
 }
 
 /**
+ * PhilosophyItem（仕事への姿勢・こだわり）の型定義
+ */
+export interface PhilosophyItem {
+  number: string;
+  title: string;
+  description: string;
+}
+
+/**
  * SNSリンクの型定義
  */
 export interface SnsLinks {
