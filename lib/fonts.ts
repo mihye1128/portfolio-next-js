@@ -9,4 +9,5 @@ export const zenKakuGothicNew = Zen_Kaku_Gothic_New({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
   variable: "--font-zen-kaku-gothic-new",
+  preload: false,
 });
