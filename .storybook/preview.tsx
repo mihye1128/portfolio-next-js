@@ -1,8 +1,6 @@
-import React from "react";
 import { withThemeByClassName } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/nextjs-vite";
 import "../app/globals.css";
-import { rajdhani } from "../lib/fonts";
 
 const preview: Preview = {
   parameters: {
@@ -26,11 +24,6 @@ const preview: Preview = {
       },
       defaultTheme: "light",
     }),
-    (Story) => (
-      <div className={rajdhani.variable}>
-        <Story />
-      </div>
-    ),
   ],
 };
 

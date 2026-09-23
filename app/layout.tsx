@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${zenKakuGothicNew.className} min-h-dvh`}
+        className={`${inter.variable} ${zenKakuGothicNew.variable} ${zenKakuGothicNew.className} min-h-dvh`}
       >
         <ThemeProvider
           attribute="class"

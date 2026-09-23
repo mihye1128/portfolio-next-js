@@ -31,9 +31,7 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
             <p className="profile-tagline text-muted-foreground">
               {profile.tagline.split(" / ").map((part, index, parts) => (
                 <span key={index}>
-                  {part}
-                  {index < parts.length - 1 ? " /" : ""}
-                  {index < parts.length - 1 && " "}
+                  {index < parts.length - 1 ? `${part} / ` : part}
                 </span>
               ))}
             </p>

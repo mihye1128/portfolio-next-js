@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { NAVIGATION_ITEMS } from "@/constants/site";
 
 interface SectionProps {
   id?: string;
@@ -8,12 +9,12 @@ interface SectionProps {
   children: ReactNode;
   className?: string;
 }
-const numbers: Record<string, string> = {
-  skills: "01",
-  philosophy: "02",
-  works: "03",
-  profile: "04",
-};
+
+function getSectionNumber(id?: string): string {
+  if (!id) return "—";
+  const index = NAVIGATION_ITEMS.findIndex((item) => item.href === `/#${id}`);
+  return index === -1 ? "—" : String(index + 1).padStart(2, "0");
+}
 export default function Section({
   id,
   title,
@@ -29,7 +30,7 @@ export default function Section({
     >
       <div className="section-heading">
         <div className="section-title">
-          <span className="section-number">{id ? numbers[id] : "—"}</span>
+          <span className="section-number">{getSectionNumber(id)}</span>
           <h2 id={id ? `${id}-title` : undefined}>
             {title}
             <span className="accent">.</span>

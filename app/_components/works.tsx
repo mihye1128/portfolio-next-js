@@ -280,11 +280,7 @@ export default function Works() {
     >
       <div className="works-list">
         {WORK_ITEMS.map((work, i) => (
-          <WorkItem
-            work={work}
-            key={`work_${i}`}
-            isLast={i === WORK_ITEMS.length - 1}
-          />
+          <WorkItem work={work} key={`work_${i}`} />
         ))}
       </div>
     </Section>

@@ -3,7 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 
 interface WorkItemProps {
   work: Work;
-  isLast?: boolean;
 }
 export default function WorkItem({ work }: WorkItemProps) {
   return (

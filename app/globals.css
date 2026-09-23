@@ -310,7 +310,7 @@ a:hover {
   max-width: 510px;
   font-size: 14px;
   line-height: 2;
-  font-family: inherit;
+  font-family: var(--font-zen-kaku-gothic-new), sans-serif;
 }
 .text-link {
   display: inline-flex;
