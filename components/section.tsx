@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { NAVIGATION_ITEMS } from "@/constants/site";
+import ScrollReveal from "./scroll-reveal";
 
 interface SectionProps {
   id?: string;
@@ -28,7 +29,7 @@ export default function Section({
       id={id}
       aria-labelledby={id ? `${id}-title` : undefined}
     >
-      <div className="section-heading">
+      <ScrollReveal className="section-heading">
         <div className="section-title">
           <span className="section-number">{getSectionNumber(id)}</span>
           <h2 id={id ? `${id}-title` : undefined}>
@@ -37,7 +38,7 @@ export default function Section({
           </h2>
         </div>
         {description && <p className="section-description">{description}</p>}
-      </div>
+      </ScrollReveal>
       {children}
     </section>
   );

@@ -8,9 +8,11 @@ export default function Hero() {
         <span>Based in Hiroshima, Japan</span>
       </div>
       <h1 id="hero-title" className="hero-title">
-        Mitsui<span className="accent">.</span>
+        <span className="hero-title-line">
+          Mitsui<span className="accent">.</span>
+        </span>
         <br />
-        <span className="hero-outline">Portfolio</span>
+        <span className="hero-outline hero-title-line">Portfolio</span>
       </h1>
       <div className="hero-bottom">
         <p className="hero-caption">
