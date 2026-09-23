@@ -36,6 +36,7 @@ import {
   SiZod,
 } from "@icons-pack/react-simple-icons";
 import { OpenAiIcon } from "@/components/icons/openai-icon";
+import ScrollReveal from "@/components/scroll-reveal";
 import Section from "@/components/section";
 import WorkItem from "./work-item";
 
@@ -278,11 +279,11 @@ export default function Works() {
       description={WORKS_SECTION_DESCRIPTION}
       id="works"
     >
-      <div className="works-list">
+      <ScrollReveal className="works-list" targets=":scope > article">
         {WORK_ITEMS.map((work, i) => (
           <WorkItem work={work} key={`work_${i}`} />
         ))}
-      </div>
+      </ScrollReveal>
     </Section>
   );
 }

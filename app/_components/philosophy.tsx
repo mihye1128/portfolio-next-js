@@ -1,4 +1,5 @@
 import type { PhilosophyItem as PhilosophyItemType } from "@/types";
+import ScrollReveal from "@/components/scroll-reveal";
 import Section from "@/components/section";
 import PhilosophyItem from "./philosophy-item";
 
@@ -46,11 +47,11 @@ export default function Philosophy() {
       description={PHILOSOPHY_SECTION_DESCRIPTION}
       id="philosophy"
     >
-      <div className="philosophy-list">
+      <ScrollReveal className="philosophy-list" targets=":scope > div">
         {PHILOSOPHY_ITEMS.map((item) => (
           <PhilosophyItem item={item} key={item.number} />
         ))}
-      </div>
+      </ScrollReveal>
     </Section>
   );
 }

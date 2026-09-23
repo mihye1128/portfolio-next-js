@@ -40,6 +40,7 @@ import {
 } from "@icons-pack/react-simple-icons";
 import { OpenAiIcon } from "@/components/icons/openai-icon";
 import { SendGridIcon } from "@/components/icons/sendgrid-icon";
+import ScrollReveal from "@/components/scroll-reveal";
 import Section from "@/components/section";
 import CoreSkillCard from "./core-skill-card";
 import SkillItem from "./skill-item";
@@ -192,9 +193,12 @@ export default function Skills() {
       description={SKILLS_SECTION_DESCRIPTION}
       id="skills"
     >
-      <div className="skills-content">
+      <ScrollReveal
+        className="skills-content"
+        targets=":scope > div:first-child > h3, .core-skill, .skills-ai, .skill-category"
+      >
         <div>
-          <h3 className="mb-4 text-2xl font-bold">{CORE_SKILLS_TITLE}</h3>
+          <h3>{CORE_SKILLS_TITLE}</h3>
           <div className="core-skills-grid">
             {CORE_SKILLS.map((skill) => (
               <CoreSkillCard skill={skill} key={skill.label} />
@@ -202,8 +206,8 @@ export default function Skills() {
           </div>
         </div>
 
-        <div>
-          <h3 className="mb-1 text-2xl font-bold">{AI_SKILLS_TITLE}</h3>
+        <div className="skills-ai">
+          <h3>{AI_SKILLS_TITLE}</h3>
           <p className="mb-3 text-sm leading-[1.75]">{AI_SKILLS_DESCRIPTION}</p>
           <ul className="grid gap-4 sm:grid-cols-3">
             {AI_SKILLS.map((skill) => (
@@ -216,7 +220,7 @@ export default function Skills() {
 
         {SKILL_TAG_CATEGORIES.map((category) => (
           <div key={category.title} className="skill-category">
-            <h3 className="mb-3 text-2xl font-bold">{category.title}</h3>
+            <h3>{category.title}</h3>
             <ul className="flex flex-wrap gap-2">
               {category.skillItems.map((skill) => (
                 <li key={skill.label}>
@@ -226,7 +230,7 @@ export default function Skills() {
             </ul>
           </div>
         ))}
-      </div>
+      </ScrollReveal>
     </Section>
   );
 }

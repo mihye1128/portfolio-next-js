@@ -1,10 +1,11 @@
 import { ArrowUp, ArrowUpRight } from "lucide-react";
 import { AUTHOR, CONTACT_FORM_URL } from "@/constants/site";
+import ScrollReveal from "@/components/scroll-reveal";
 
 export default function Footer() {
   return (
     <footer className="site-footer">
-      <div className="container">
+      <ScrollReveal className="container" targets=":scope > div">
         <div className="footer-top">
           <div>
             <p className="eyebrow">Get in touch</p>
@@ -34,7 +35,7 @@ export default function Footer() {
             Back to top <ArrowUp size={14} aria-hidden="true" />
           </a>
         </div>
-      </div>
+      </ScrollReveal>
     </footer>
   );
 }

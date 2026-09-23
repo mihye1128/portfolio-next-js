@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { ThemeProvider } from "next-themes";
-import { expect, screen, userEvent, waitFor } from "storybook/test";
+import { expect, userEvent, waitFor } from "storybook/test";
 import { ModeToggle } from "./mode-toggle";
 
 const meta = {
@@ -14,8 +14,10 @@ const meta = {
     (Story) => (
       <ThemeProvider
         attribute="class"
-        defaultTheme="light"
-        enableSystem={false}
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+        storageKey="storybook-theme"
       >
         <Story />
       </ThemeProvider>
@@ -26,31 +28,29 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  render: () => <ModeToggle />,
-};
+export const Default: Story = {};
 
-export const OpenMenu: Story = {
-  render: () => <ModeToggle />,
-  play: async () => {
-    const toggleButton = screen.getByRole("button", { name: /toggle theme/i });
-    await userEvent.click(toggleButton);
-
+export const ToggleTheme: Story = {
+  play: async ({ canvas, canvasElement }) => {
+    const root = canvasElement.ownerDocument.documentElement;
+    const button = canvas.getByRole("button", { name: /モードに切り替え/ });
     await waitFor(() => {
-      expect(screen.getByText(/^Light$/i)).toBeInTheDocument();
-      expect(screen.getByText(/^Dark$/i)).toBeInTheDocument();
-      expect(screen.getByText(/^System$/i)).toBeInTheDocument();
+      expect(root.matches(".light, .dark")).toBe(true);
     });
-  },
-};
+    const initiallyDark = root.classList.contains("dark");
 
-export const SelectDarkMode: Story = {
-  render: () => <ModeToggle />,
-  play: async () => {
-    const toggleButton = screen.getByRole("button", { name: /toggle theme/i });
-    await userEvent.click(toggleButton);
+    await userEvent.click(button);
+    await waitFor(() => {
+      expect(root.classList.contains("dark")).toBe(!initiallyDark);
+      expect(button).toHaveAccessibleName(
+        initiallyDark ? "ダークモードに切り替え" : "ライトモードに切り替え"
+      );
+    });
+    expect(canvas.queryByRole("menu")).not.toBeInTheDocument();
 
-    const darkOption = await screen.findByText(/^Dark$/i);
-    await userEvent.click(darkOption);
+    await userEvent.click(button);
+    await waitFor(() => {
+      expect(root.classList.contains("dark")).toBe(initiallyDark);
+    });
   },
 };

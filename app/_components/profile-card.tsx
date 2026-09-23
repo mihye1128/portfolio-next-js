@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Profile } from "@/types";
 import { SiGithub } from "@icons-pack/react-simple-icons";
+import ScrollReveal from "@/components/scroll-reveal";
 import { Button } from "@/components/ui/button";
 
 interface ProfileCardProps {
@@ -9,7 +10,10 @@ interface ProfileCardProps {
 
 export default function ProfileCard({ profile }: ProfileCardProps) {
   return (
-    <div className="profile-layout">
+    <ScrollReveal
+      className="profile-layout"
+      targets=".profile-identity, :scope > div > ul, :scope > div > div > p"
+    >
       <div className="profile-identity">
         <div className="profile-name">
           <div className="profile-name-row">
@@ -55,6 +59,6 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
           {profile.description}
         </div>
       </div>
-    </div>
+    </ScrollReveal>
   );
 }

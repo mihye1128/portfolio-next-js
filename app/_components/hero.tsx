@@ -7,13 +7,24 @@ export default function Hero() {
         <span>Independent front-end engineer</span>
         <span>Based in Hiroshima, Japan</span>
       </div>
-      <h1 id="hero-title" className="hero-title">
-        <span className="hero-title-line">
-          Mitsui<span className="accent">.</span>
-        </span>
-        <br />
-        <span className="hero-outline hero-title-line">Portfolio</span>
-      </h1>
+      <div className="hero-composition">
+        <h1 id="hero-title" className="hero-title">
+          <span className="hero-title-line">
+            Mitsui<span className="accent">.</span>
+          </span>
+          <br />
+          <span className="hero-outline hero-title-line">Portfolio</span>
+        </h1>
+        <div className="hero-note">
+          <span className="hero-note-label">MY APPROACH</span>
+          <p>
+            使う人にとって心地よく、
+            <br />
+            育てていける実装を。
+          </p>
+          <span className="hero-note-mark">UI development / Front-end</span>
+        </div>
+      </div>
       <div className="hero-bottom">
         <p className="hero-caption">
           Thoughtful interfaces.
