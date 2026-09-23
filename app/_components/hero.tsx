@@ -6,10 +6,10 @@ export default function Hero() {
         <p className="font-rajdhani mb-4">front-end engineer</p>
         <p className="text-sm leading-[1.75]">
           <span className="inline-block">
-            ユーザビリティやメンテナンス性を考慮し、
+            TypeScript / React / Next.jsを中心に、生成AIも活用しながら
           </span>
           <span className="inline-block">
-            品質の高いコーディングを目指します。
+            ユーザビリティと保守性を両立するUI実装に取り組んでいます。
           </span>
         </p>
       </div>

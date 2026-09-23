@@ -18,6 +18,9 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
         </Avatar>
         <div className="text-center">
           <p className="text-xl">{profile.name}</p>
+          {profile.tagline && (
+            <p className="text-muted-foreground text-sm">{profile.tagline}</p>
+          )}
           {profile.sns && (
             <div>
               {profile.sns?.x && (
@@ -57,8 +60,27 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
           )}
         </div>
       </div>
-      <div className="grid gap-2 text-sm leading-loose">
-        {profile.description}
+      <div className="grid gap-6">
+        {profile.highlights && profile.highlights.length > 0 && (
+          <ul className="grid gap-3 sm:grid-cols-3">
+            {profile.highlights.map((highlight) => (
+              <li
+                key={highlight.label}
+                className="bg-background rounded-sm border px-4 py-3"
+              >
+                <p className="font-rajdhani mb-1 text-sm font-semibold">
+                  {highlight.label}
+                </p>
+                <p className="text-muted-foreground text-xs leading-[1.75]">
+                  {highlight.description}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="grid gap-2 text-sm leading-loose">
+          {profile.description}
+        </div>
       </div>
     </div>
   );

@@ -1,156 +1,145 @@
-import type { Skill } from "@/types";
+import type { CoreSkill, Skill, SkillTag as SkillTagType } from "@/types";
 import {
   SiAlgolia,
   SiAngular,
   SiAstro,
-  SiCloudflare,
-  SiCss,
+  SiAxios,
+  SiBiome,
+  SiClaude,
   SiDocker,
   SiExpo,
   SiFigma,
   SiFirebase,
-  SiHtml5,
-  SiLocal,
-  SiNextdotjs,
-  SiPhp,
+  SiGit,
+  SiGithub,
+  SiGithubactions,
+  SiJquery,
+  SiMaterialdesign,
+  SiMui,
+  SiOpenapiinitiative,
   SiReact,
+  SiReacthookform,
+  SiRubyonrails,
+  SiSass,
+  SiShadcnui,
+  SiSpringboot,
   SiStimulus,
   SiStorybook,
   SiTailwindcss,
-  SiTypescript,
+  SiTanstack,
+  SiVite,
   SiVitest,
+  SiVuedotjs,
+  SiWebpack,
   SiWordpress,
+  SiZod,
 } from "@icons-pack/react-simple-icons";
+import { Mail, MessageSquare } from "lucide-react";
 import Section from "@/components/section";
+import CoreSkillBar from "./core-skill-bar";
 import SkillItem from "./skill-item";
+import SkillTag from "./skill-tag";
 
 const SKILLS_SECTION_TITLE = "Skills";
-const SKILLS_SECTION_DESCRIPTION = "下記の技術を用いた開発が可能です。";
+const SKILLS_SECTION_DESCRIPTION =
+  "TypeScript / React / Next.jsを中心に、下記の技術を用いた開発が可能です。";
 
-interface SkillCategory {
+const CORE_SKILLS_TITLE = "Core Skills";
+
+const CORE_SKILLS: CoreSkill[] = [
+  { label: "TypeScript", years: "3年以上", levelPercent: 40 },
+  { label: "React", years: "4年以上", levelPercent: 50 },
+  { label: "Next.js", years: "4年以上", levelPercent: 50 },
+  { label: "JavaScript", years: "8年以上", levelPercent: 100 },
+  { label: "HTML / CSS", years: "8年以上", levelPercent: 100 },
+];
+
+const AI_SKILLS_TITLE = "AI / 開発支援";
+const AI_SKILLS_DESCRIPTION =
+  "設計・実装・レビュー・テスト作成まで、生成AIを日常的に活用して開発効率の向上に取り組んでいます。";
+
+const AI_SKILLS: Skill[] = [
+  {
+    icon: <SiClaude color="default" size={40} />,
+    label: "Claude Code",
+    description: "設計・実装・レビュー・テスト作成まで日常的に活用。",
+  },
+  {
+    icon: <MessageSquare className="text-foreground" size={40} />,
+    label: "ChatGPT",
+    description: "実装方針の壁打ちやコードレビューの補助に活用。",
+  },
+  {
+    icon: <SiFigma color="default" size={40} />,
+    label: "Figma MCP",
+    description: "Figmaのデザインデータをもとにした実装効率化に活用。",
+  },
+];
+
+interface SkillTagCategory {
   title: string;
-  skillItems: Skill[];
+  skillItems: SkillTagType[];
 }
 
-const SKILL_CATEGORIES: SkillCategory[] = [
+const SKILL_TAG_CATEGORIES: SkillTagCategory[] = [
   {
-    title: "JavaScript",
+    title: "UI / Styling",
     skillItems: [
-      {
-        icon: <SiTypescript color="default" size={40} />,
-        label: "TypeScript",
-        description: "型安全を考慮し、基本的にTypeScriptを採用します。",
-      },
-      {
-        icon: <SiReact color="default" size={40} />,
-        label: "React",
-        description: "React, React Nativeを使用した開発経験があります。",
-      },
-      {
-        icon: <SiNextdotjs className="text-nextjs" size={40} />,
-        label: "Next.js",
-        description: "Next.js, TypeScriptを採用した開発経験があります。",
-      },
-      {
-        icon: <SiAngular className="text-angular" size={40} />,
-        label: "Angular",
-        description: "Angular, AngularMaterialでの開発経験があります。",
-      },
-      {
-        icon: <SiExpo className="text-expo" size={40} />,
-        label: "Expo",
-        description: "Expoを採用したモバイルアプリ開発経験があります。",
-      },
-      {
-        icon: <SiStorybook color="default" size={40} />,
-        label: "Storybook",
-        description: "UIコンポーネントの開発・管理に使用しています。",
-      },
-      {
-        icon: <SiVitest color="default" size={40} />,
-        label: "Vitest",
-        description: "ユニットテストに使用しています。",
-      },
-      {
-        icon: <SiStimulus color="default" size={40} />,
-        label: "Stimulus",
-        description: "Rails環境で動的UI実装に使用した経験があります。",
-      },
+      { icon: <SiTailwindcss color="default" />, label: "Tailwind CSS" },
+      { icon: <SiShadcnui color="default" />, label: "shadcn/ui" },
+      { icon: <SiMui color="default" />, label: "MUI" },
+      { icon: <SiMaterialdesign color="default" />, label: "Angular Material" },
+      { icon: <SiSass color="default" />, label: "Sass" },
     ],
   },
   {
-    title: "Mark up",
+    title: "Frameworks / Libraries",
     skillItems: [
-      {
-        icon: <SiHtml5 color="default" size={40} />,
-        label: "HTML",
-        description: "プリプロセッサ（EJSなど）採用も可能です。",
-      },
-      {
-        icon: <SiCss color="default" size={40} />,
-        label: "CSS",
-        description: "Sassを採用した実装も可能です。",
-      },
-      {
-        icon: <SiTailwindcss color="default" size={40} />,
-        label: "Tailwind CSS",
-        description: "主要CSSフレームワークとして使用しています。",
-      },
-      {
-        icon: <SiAstro color="default" size={40} />,
-        label: "Astro",
-        description: "静的サイト実装に活用しています。",
-      },
+      { icon: <SiReact color="default" />, label: "React Native" },
+      { icon: <SiExpo className="text-expo" />, label: "Expo" },
+      { icon: <SiAngular className="text-angular" />, label: "Angular" },
+      { icon: <SiVuedotjs color="default" />, label: "Vue.js" },
+      { icon: <SiStimulus color="default" />, label: "Stimulus.js" },
+      { icon: <SiJquery color="default" />, label: "jQuery" },
+      { icon: <SiAstro color="default" />, label: "Astro" },
+      { icon: <SiWordpress color="default" />, label: "WordPress" },
+      { icon: <SiSpringboot color="default" />, label: "Spring Boot" },
+      { icon: <SiRubyonrails color="default" />, label: "Ruby on Rails" },
     ],
   },
   {
-    title: "Backend & Environment",
+    title: "Frontend Tooling",
     skillItems: [
+      { icon: <SiReacthookform color="default" />, label: "React Hook Form" },
       {
-        icon: <SiWordpress color="default" size={40} />,
-        label: "WordPress",
-        description: "各種サイトの構築経験があります。",
+        icon: <SiTanstack className="text-foreground" />,
+        label: "TanStack Query",
       },
-      {
-        icon: <SiPhp color="default" size={40} />,
-        label: "PHP",
-        description: "WPテーマ制作に必要な基本的な構文が可能です。",
-      },
-      {
-        icon: <SiDocker color="default" size={40} />,
-        label: "Docker",
-        description: "ローカル環境構築に採用しています。",
-      },
-      {
-        icon: <SiLocal color="default" size={40} />,
-        label: "Local",
-        description: "案件規模やチーム構成を考慮して採用します。",
-      },
+      { icon: <SiZod color="default" />, label: "Zod" },
+      { icon: <SiAxios color="default" />, label: "Axios" },
+      { icon: <SiBiome color="default" />, label: "Biome" },
+      { icon: <SiVitest color="default" />, label: "Vitest" },
+      { icon: <SiOpenapiinitiative color="default" />, label: "OpenAPI" },
+      { icon: <SiStorybook color="default" />, label: "Storybook" },
     ],
   },
   {
-    title: "Other",
+    title: "Backend / Services",
     skillItems: [
-      {
-        icon: <SiFigma color="default" size={40} />,
-        label: "Figma",
-        description: "コーディングの際に必要な基本的な操作が可能です。",
-      },
-      {
-        icon: <SiFirebase color="default" size={40} />,
-        label: "Firebase",
-        description: "アプリのバックエンドとして使用経験があります。",
-      },
-      {
-        icon: <SiCloudflare color="default" size={40} />,
-        label: "Cloudflare",
-        description: "Pages / Workersの使用経験があります。",
-      },
-      {
-        icon: <SiAlgolia color="default" size={40} />,
-        label: "Algolia",
-        description: "検索機能の実装に使用しました。",
-      },
+      { icon: <SiFirebase color="default" />, label: "Firebase" },
+      { icon: <Mail className="text-foreground" />, label: "SendGrid" },
+      { icon: <SiAlgolia color="default" />, label: "Algolia" },
+    ],
+  },
+  {
+    title: "Development",
+    skillItems: [
+      { icon: <SiGit color="default" />, label: "Git" },
+      { icon: <SiGithub color="default" />, label: "GitHub" },
+      { icon: <SiGithubactions color="default" />, label: "GitHub Actions" },
+      { icon: <SiVite color="default" />, label: "Vite" },
+      { icon: <SiWebpack className="text-foreground" />, label: "Webpack" },
+      { icon: <SiDocker color="default" />, label: "Docker" },
     ],
   },
 ];
@@ -162,14 +151,35 @@ export default function Skills() {
       description={SKILLS_SECTION_DESCRIPTION}
       id="skills"
     >
-      <div className="grid gap-8">
-        {SKILL_CATEGORIES.map((item) => (
-          <div key={item.title}>
-            <h3 className="font-rajdhani mb-3 text-2xl">{item.title}</h3>
-            <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {item.skillItems.map((skill) => (
+      <div className="grid gap-12">
+        <div>
+          <h3 className="font-rajdhani mb-4 text-2xl">{CORE_SKILLS_TITLE}</h3>
+          <div className="mx-auto grid max-w-2xl gap-4">
+            {CORE_SKILLS.map((skill) => (
+              <CoreSkillBar skill={skill} key={skill.label} />
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="font-rajdhani mb-1 text-2xl">{AI_SKILLS_TITLE}</h3>
+          <p className="mb-3 text-sm leading-[1.75]">{AI_SKILLS_DESCRIPTION}</p>
+          <ul className="mx-auto grid max-w-2xl gap-5 sm:grid-cols-3">
+            {AI_SKILLS.map((skill) => (
+              <li key={skill.label}>
+                <SkillItem skill={skill} />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {SKILL_TAG_CATEGORIES.map((category) => (
+          <div key={category.title}>
+            <h3 className="font-rajdhani mb-3 text-2xl">{category.title}</h3>
+            <ul className="flex flex-wrap gap-2">
+              {category.skillItems.map((skill) => (
                 <li key={skill.label}>
-                  <SkillItem skill={skill} />
+                  <SkillTag skill={skill} />
                 </li>
               ))}
             </ul>

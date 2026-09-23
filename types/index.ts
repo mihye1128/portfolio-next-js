@@ -23,6 +23,23 @@ export interface Skill {
 }
 
 /**
+ * CoreSkill（経験年数を示すコアスキル）の型定義
+ */
+export interface CoreSkill {
+  label: string;
+  years: string;
+  levelPercent: number;
+}
+
+/**
+ * SkillTag（アイコン+ラベルのみの軽量スキル表示）の型定義
+ */
+export interface SkillTag {
+  label: string;
+  icon: ReactNode;
+}
+
+/**
  * SNSリンクの型定義
  */
 export interface SnsLinks {
@@ -32,10 +49,20 @@ export interface SnsLinks {
 }
 
 /**
+ * ハイライト（強み・経験の要約）の型定義
+ */
+export interface ProfileHighlight {
+  label: string;
+  description: string;
+}
+
+/**
  * Profile（プロフィール）の型定義
  */
 export interface Profile {
   name: string;
+  tagline?: string;
+  highlights?: ProfileHighlight[];
   description: string | ReactNode;
   sns?: SnsLinks;
 }
