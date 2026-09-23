@@ -8,7 +8,12 @@ interface SectionProps {
   children: ReactNode;
   className?: string;
 }
-
+const numbers: Record<string, string> = {
+  skills: "01",
+  philosophy: "02",
+  works: "03",
+  profile: "04",
+};
 export default function Section({
   id,
   title,
@@ -17,20 +22,22 @@ export default function Section({
   className,
 }: SectionProps) {
   return (
-    <section className={cn("py-12 md:py-20", className)} id={id}>
-      <div className="container">
-        <div className="mb-6 grid gap-4 md:mb-12 md:gap-8">
-          <h2 className="font-rajdhani text-center text-3xl leading-none font-bold uppercase">
+    <section
+      className={cn("editorial-section container", className)}
+      id={id}
+      aria-labelledby={id ? `${id}-title` : undefined}
+    >
+      <div className="section-heading">
+        <div className="section-title">
+          <span className="section-number">{id ? numbers[id] : "—"}</span>
+          <h2 id={id ? `${id}-title` : undefined}>
             {title}
+            <span className="accent">.</span>
           </h2>
-          {description && (
-            <p className="mx-auto w-fit text-sm leading-[1.75] sm:text-center md:text-base md:leading-[1.75]">
-              {description}
-            </p>
-          )}
         </div>
-        {children}
+        {description && <p className="section-description">{description}</p>}
       </div>
+      {children}
     </section>
   );
 }

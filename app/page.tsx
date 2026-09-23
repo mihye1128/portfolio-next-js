@@ -6,7 +6,7 @@ import Works from "./_components/works";
 
 export default function Home() {
   return (
-    <main>
+    <main id="main">
       <Hero />
       <Skills />
       <Philosophy />

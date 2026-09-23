@@ -13,9 +13,12 @@ import {
   SiGit,
   SiGithub,
   SiGithubactions,
+  SiHtml5,
+  SiJavascript,
   SiJquery,
   SiMaterialdesign,
   SiMui,
+  SiNextdotjs,
   SiOpenapiinitiative,
   SiReact,
   SiReacthookform,
@@ -27,6 +30,7 @@ import {
   SiStorybook,
   SiTailwindcss,
   SiTanstack,
+  SiTypescript,
   SiVite,
   SiVitest,
   SiVuedotjs,
@@ -34,9 +38,10 @@ import {
   SiWordpress,
   SiZod,
 } from "@icons-pack/react-simple-icons";
-import { Mail, MessageSquare } from "lucide-react";
+import { OpenAiIcon } from "@/components/icons/openai-icon";
+import { SendGridIcon } from "@/components/icons/sendgrid-icon";
 import Section from "@/components/section";
-import CoreSkillBar from "./core-skill-bar";
+import CoreSkillCard from "./core-skill-card";
 import SkillItem from "./skill-item";
 import SkillTag from "./skill-tag";
 
@@ -47,11 +52,48 @@ const SKILLS_SECTION_DESCRIPTION =
 const CORE_SKILLS_TITLE = "Core Skills";
 
 const CORE_SKILLS: CoreSkill[] = [
-  { label: "TypeScript", years: "3年以上", levelPercent: 40 },
-  { label: "React", years: "4年以上", levelPercent: 50 },
-  { label: "Next.js", years: "4年以上", levelPercent: 50 },
-  { label: "JavaScript", years: "8年以上", levelPercent: 100 },
-  { label: "HTML / CSS", years: "8年以上", levelPercent: 100 },
+  {
+    label: "TypeScript",
+    value: "3",
+    unit: "Years",
+    icon: <SiTypescript color="default" />,
+    description: "型安全性を意識した、堅牢で保守しやすい実装ができます。",
+  },
+  {
+    label: "React",
+    value: "4",
+    unit: "Years",
+    icon: <SiReact color="default" />,
+    description: "コンポーネント設計から状態管理まで対応できます。",
+  },
+  {
+    label: "Next.js",
+    value: "4",
+    unit: "Years",
+    icon: <SiNextdotjs className="text-nextjs" />,
+    description: "App RouterやSSR/ISRを活かした実装ができます。",
+  },
+  {
+    label: "Tailwind CSS",
+    value: "4",
+    unit: "Years",
+    icon: <SiTailwindcss color="default" />,
+    description: "デザインに忠実で崩れにくいスタイリングができます。",
+  },
+  {
+    label: "JavaScript",
+    value: "8",
+    unit: "Years",
+    icon: <SiJavascript color="default" />,
+    description: "DOM操作から非同期処理まで幅広く対応できます。",
+  },
+  {
+    label: "HTML / CSS",
+    value: "8",
+    unit: "Years",
+    icon: <SiHtml5 color="default" />,
+    description: "セマンティックでアクセシブルなマークアップができます。",
+  },
 ];
 
 const AI_SKILLS_TITLE = "AI / 開発支援";
@@ -60,17 +102,17 @@ const AI_SKILLS_DESCRIPTION =
 
 const AI_SKILLS: Skill[] = [
   {
-    icon: <SiClaude color="default" size={40} />,
+    icon: <SiClaude color="default" />,
     label: "Claude Code",
     description: "設計・実装・レビュー・テスト作成まで日常的に活用。",
   },
   {
-    icon: <MessageSquare className="text-foreground" size={40} />,
+    icon: <OpenAiIcon className="text-foreground" />,
     label: "ChatGPT",
     description: "実装方針の壁打ちやコードレビューの補助に活用。",
   },
   {
-    icon: <SiFigma color="default" size={40} />,
+    icon: <SiFigma color="default" />,
     label: "Figma MCP",
     description: "Figmaのデザインデータをもとにした実装効率化に活用。",
   },
@@ -85,8 +127,7 @@ const SKILL_TAG_CATEGORIES: SkillTagCategory[] = [
   {
     title: "UI / Styling",
     skillItems: [
-      { icon: <SiTailwindcss color="default" />, label: "Tailwind CSS" },
-      { icon: <SiShadcnui color="default" />, label: "shadcn/ui" },
+      { icon: <SiShadcnui className="text-shadcnui" />, label: "shadcn/ui" },
       { icon: <SiMui color="default" />, label: "MUI" },
       { icon: <SiMaterialdesign color="default" />, label: "Angular Material" },
       { icon: <SiSass color="default" />, label: "Sass" },
@@ -127,7 +168,7 @@ const SKILL_TAG_CATEGORIES: SkillTagCategory[] = [
     title: "Backend / Services",
     skillItems: [
       { icon: <SiFirebase color="default" />, label: "Firebase" },
-      { icon: <Mail className="text-foreground" />, label: "SendGrid" },
+      { icon: <SendGridIcon color="default" />, label: "SendGrid" },
       { icon: <SiAlgolia color="default" />, label: "Algolia" },
     ],
   },
@@ -135,7 +176,7 @@ const SKILL_TAG_CATEGORIES: SkillTagCategory[] = [
     title: "Development",
     skillItems: [
       { icon: <SiGit color="default" />, label: "Git" },
-      { icon: <SiGithub color="default" />, label: "GitHub" },
+      { icon: <SiGithub className="text-github" />, label: "GitHub" },
       { icon: <SiGithubactions color="default" />, label: "GitHub Actions" },
       { icon: <SiVite color="default" />, label: "Vite" },
       { icon: <SiWebpack className="text-foreground" />, label: "Webpack" },
@@ -151,20 +192,20 @@ export default function Skills() {
       description={SKILLS_SECTION_DESCRIPTION}
       id="skills"
     >
-      <div className="grid gap-12">
+      <div className="skills-content">
         <div>
-          <h3 className="font-rajdhani mb-4 text-2xl">{CORE_SKILLS_TITLE}</h3>
-          <div className="mx-auto grid max-w-2xl gap-4">
+          <h3 className="mb-4 text-2xl font-bold">{CORE_SKILLS_TITLE}</h3>
+          <div className="core-skills-grid">
             {CORE_SKILLS.map((skill) => (
-              <CoreSkillBar skill={skill} key={skill.label} />
+              <CoreSkillCard skill={skill} key={skill.label} />
             ))}
           </div>
         </div>
 
         <div>
-          <h3 className="font-rajdhani mb-1 text-2xl">{AI_SKILLS_TITLE}</h3>
+          <h3 className="mb-1 text-2xl font-bold">{AI_SKILLS_TITLE}</h3>
           <p className="mb-3 text-sm leading-[1.75]">{AI_SKILLS_DESCRIPTION}</p>
-          <ul className="mx-auto grid max-w-2xl gap-5 sm:grid-cols-3">
+          <ul className="grid gap-4 sm:grid-cols-3">
             {AI_SKILLS.map((skill) => (
               <li key={skill.label}>
                 <SkillItem skill={skill} />
@@ -174,8 +215,8 @@ export default function Skills() {
         </div>
 
         {SKILL_TAG_CATEGORIES.map((category) => (
-          <div key={category.title}>
-            <h3 className="font-rajdhani mb-3 text-2xl">{category.title}</h3>
+          <div key={category.title} className="skill-category">
+            <h3 className="mb-3 text-2xl font-bold">{category.title}</h3>
             <ul className="flex flex-wrap gap-2">
               {category.skillItems.map((skill) => (
                 <li key={skill.label}>

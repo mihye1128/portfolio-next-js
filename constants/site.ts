@@ -31,3 +31,5 @@ export const NAVIGATION_ITEMS = [
     href: "/#profile",
   },
 ] as const;
+
+export const CONTACT_FORM_URL = "https://forms.gle/rEH7kMm447XXjLFN7";

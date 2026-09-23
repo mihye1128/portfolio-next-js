@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Profile } from "@/types";
-import { SiFacebook, SiGithub, SiX } from "@icons-pack/react-simple-icons";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 
 interface ProfileCardProps {
@@ -10,67 +9,43 @@ interface ProfileCardProps {
 
 export default function ProfileCard({ profile }: ProfileCardProps) {
   return (
-    <div className="bg-card rounded-xl border px-5 py-8 md:grid md:grid-cols-[auto_1fr] md:items-center md:gap-6 md:py-8 md:pr-16 md:pl-8">
-      <div className="font-rajdhani mb-6 items-center md:mb-0 md:min-w-56">
-        <Avatar className="mx-auto mb-3">
-          <AvatarImage src="/images/profile/thumbnail.jpg" alt="" />
-          <AvatarFallback>{profile.name}</AvatarFallback>
-        </Avatar>
-        <div className="text-center">
-          <p className="text-xl">{profile.name}</p>
+    <div className="profile-layout">
+      <div className="profile-identity">
+        <div className="profile-name">
+          <div className="profile-name-row">
+            <p className="profile-display-name">{profile.name}</p>
+            {profile.sns?.github && (
+              <Button variant="ghost" size="icon" asChild>
+                <Link
+                  aria-label="GitHub（新しいタブで開く）"
+                  href={profile.sns.github}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <SiGithub className="size-5" />
+                </Link>
+              </Button>
+            )}
+          </div>
           {profile.tagline && (
-            <p className="text-muted-foreground text-sm">{profile.tagline}</p>
-          )}
-          {profile.sns && (
-            <div>
-              {profile.sns?.x && (
-                <Button variant="ghost" size="icon" asChild>
-                  <Link
-                    href={profile.sns.x}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    <SiX className="size-5" />
-                  </Link>
-                </Button>
-              )}
-              {profile.sns?.facebook && (
-                <Button variant="ghost" size="icon" asChild>
-                  <Link
-                    href={profile.sns.facebook}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    <SiFacebook className="size-5" />
-                  </Link>
-                </Button>
-              )}
-              {profile.sns?.github && (
-                <Button variant="ghost" size="icon" asChild>
-                  <Link
-                    href={profile.sns.github}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    <SiGithub className="size-5" />
-                  </Link>
-                </Button>
-              )}
-            </div>
+            <p className="profile-tagline text-muted-foreground">
+              {profile.tagline.split(" / ").map((part, index, parts) => (
+                <span key={index}>
+                  {part}
+                  {index < parts.length - 1 ? " /" : ""}
+                  {index < parts.length - 1 && " "}
+                </span>
+              ))}
+            </p>
           )}
         </div>
       </div>
-      <div className="grid gap-6">
+      <div className="grid gap-10">
         {profile.highlights && profile.highlights.length > 0 && (
-          <ul className="grid gap-3 sm:grid-cols-3">
+          <ul className="grid gap-6 sm:grid-cols-3">
             {profile.highlights.map((highlight) => (
-              <li
-                key={highlight.label}
-                className="bg-background rounded-sm border px-4 py-3"
-              >
-                <p className="font-rajdhani mb-1 text-sm font-semibold">
-                  {highlight.label}
-                </p>
+              <li key={highlight.label}>
+                <p className="mb-1 text-sm font-bold">{highlight.label}</p>
                 <p className="text-muted-foreground text-xs leading-[1.75]">
                   {highlight.description}
                 </p>

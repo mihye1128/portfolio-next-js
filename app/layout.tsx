@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import { rajdhani } from "@/lib/fonts";
+import { inter, zenKakuGothicNew } from "@/lib/fonts";
 import {
   AUTHOR,
   SITE_DESCRIPTION,
@@ -50,7 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className={`${rajdhani.variable} min-h-dvh`}>
+      <body
+        className={`${inter.variable} ${zenKakuGothicNew.className} min-h-dvh`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

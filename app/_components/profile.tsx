@@ -1,7 +1,10 @@
+import { CONTACT_FORM_URL } from "@/constants/site";
 import Section from "@/components/section";
 import ProfileCard from "./profile-card";
 
 const PROFILE_SECTION_TITLE = "Profile";
+const PROFILE_SECTION_DESCRIPTION =
+  "経歴と、いまの仕事への向き合い方について紹介します。";
 
 const PROFILE_CONTENT = {
   name: "Mitsui",
@@ -42,21 +45,31 @@ const PROFILE_CONTENT = {
         前職では会計事務所で法人経理を担当していましたが、より専門性の高いITスキルを身につけたいと考えWeb業界へ転身しました。フリーランスとして独立後はコミュニティ運営や初学者向けプログラミング学習サービスでのメンター経験もあります。
       </p>
       <p>
-        お問い合わせについては、各種SNSよりご連絡ください。
-        <br />
+        お問い合わせは、
+        <a
+          href={CONTACT_FORM_URL}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="underline underline-offset-4"
+        >
+          Googleフォーム<span className="sr-only">（新しいタブで開く）</span>
+        </a>
+        よりご連絡ください。
       </p>
     </>
   ),
   sns: {
-    x: "https://twitter.com/mitsui_mk",
-    facebook: "https://www.facebook.com/mitsui1128",
     github: "https://github.com/mihye1128/",
   },
 };
 
 export default function Profile() {
   return (
-    <Section title={PROFILE_SECTION_TITLE} id="profile">
+    <Section
+      title={PROFILE_SECTION_TITLE}
+      description={PROFILE_SECTION_DESCRIPTION}
+      id="profile"
+    >
       <ProfileCard profile={PROFILE_CONTENT} />
     </Section>
   );

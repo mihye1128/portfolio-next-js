@@ -27,8 +27,10 @@ export interface Skill {
  */
 export interface CoreSkill {
   label: string;
-  years: string;
-  levelPercent: number;
+  value: string;
+  unit: string;
+  icon: ReactNode;
+  description: string;
 }
 
 /**

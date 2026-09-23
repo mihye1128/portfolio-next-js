@@ -35,18 +35,13 @@ import {
   SiWordpress,
   SiZod,
 } from "@icons-pack/react-simple-icons";
-import { MessageSquare } from "lucide-react";
+import { OpenAiIcon } from "@/components/icons/openai-icon";
 import Section from "@/components/section";
 import WorkItem from "./work-item";
 
 const WORKS_SECTION_TITLE = "Works";
-const WORKS_SECTION_DESCRIPTION = (
-  <>
-    これまでに参画した主要なプロジェクトを
-    <br />
-    一部抜粋してご紹介いたします。
-  </>
-);
+const WORKS_SECTION_DESCRIPTION =
+  "これまでに参画した主要なプロジェクトを一部抜粋してご紹介いたします。";
 
 const WORK_ITEMS: Work[] = [
   {
@@ -60,11 +55,11 @@ const WORK_ITEMS: Work[] = [
     category: "システム開発（Spring Boot / Thymeleaf）",
     period: "2026.07 - 2026.10",
     skills: [
-      <SiJavascript key="js" />,
-      <SiJquery key="jquery" />,
-      <SiSpringboot key="springboot" />,
-      <SiThymeleaf key="thymeleaf" />,
-      <SiMysql key="mysql" />,
+      <SiJavascript key="js" color="default" />,
+      <SiJquery key="jquery" color="default" />,
+      <SiSpringboot key="springboot" color="default" />,
+      <SiThymeleaf key="thymeleaf" color="default" />,
+      <SiMysql key="mysql" color="default" />,
       <SiCline key="cline" className="text-foreground" />,
     ],
   },
@@ -79,15 +74,15 @@ const WORK_ITEMS: Work[] = [
     category: "SaaSダッシュボード開発（Next.js）",
     period: "2026.02 - 2026.05",
     skills: [
-      <SiTypescript key="ts" />,
-      <SiReact key="react" />,
-      <SiNextdotjs key="next" />,
-      <SiReacthookform key="rhf" />,
+      <SiTypescript key="ts" color="default" />,
+      <SiReact key="react" color="default" />,
+      <SiNextdotjs key="next" className="text-nextjs" />,
+      <SiReacthookform key="rhf" color="default" />,
       <SiTanstack key="tanstack" className="text-foreground" />,
-      <SiZod key="zod" />,
-      <SiVitest key="vitest" />,
+      <SiZod key="zod" color="default" />,
+      <SiVitest key="vitest" color="default" />,
       <SiPosthog key="posthog" className="text-foreground" />,
-      <SiClaude key="claude" />,
+      <SiClaude key="claude" color="default" />,
     ],
   },
   {
@@ -100,12 +95,12 @@ const WORK_ITEMS: Work[] = [
     category: "メディアサイト開発（Next.js）",
     period: "2025.11 - 2026.01",
     skills: [
-      <SiTypescript key="ts" />,
-      <SiReact key="react" />,
-      <SiNextdotjs key="next" />,
-      <SiStorybook key="storybook" />,
-      <SiVitest key="vitest" />,
-      <SiClaude key="claude" />,
+      <SiTypescript key="ts" color="default" />,
+      <SiReact key="react" color="default" />,
+      <SiNextdotjs key="next" className="text-nextjs" />,
+      <SiStorybook key="storybook" color="default" />,
+      <SiVitest key="vitest" color="default" />,
+      <SiClaude key="claude" color="default" />,
     ],
   },
   {
@@ -117,10 +112,10 @@ const WORK_ITEMS: Work[] = [
     category: "Webアプリ開発（Ruby on Rails）",
     period: "2025.04 - 2026.01",
     skills: [
-      <SiRuby key="ruby" />,
-      <SiRubyonrails key="rails" />,
-      <SiJavascript key="js" />,
-      <SiStimulus key="stimulus" />,
+      <SiRuby key="ruby" color="default" />,
+      <SiRubyonrails key="rails" color="default" />,
+      <SiJavascript key="js" color="default" />,
+      <SiStimulus key="stimulus" color="default" />,
     ],
   },
   {
@@ -134,14 +129,14 @@ const WORK_ITEMS: Work[] = [
     category: "モバイルアプリ開発（React Native）",
     period: "2024.12 - 2025.03",
     skills: [
-      <SiTypescript key="ts" />,
-      <SiReact key="react" />,
+      <SiTypescript key="ts" color="default" />,
+      <SiReact key="react" color="default" />,
       <SiExpo key="expo" className="text-expo" />,
-      <SiNextdotjs key="next" />,
-      <SiTailwindcss key="tailwind" />,
-      <SiShadcnui key="shadcn" />,
-      <SiFirebase key="firebase" />,
-      <MessageSquare key="chatgpt" className="text-foreground" />,
+      <SiNextdotjs key="next" className="text-nextjs" />,
+      <SiTailwindcss key="tailwind" color="default" />,
+      <SiShadcnui key="shadcn" className="text-shadcnui" />,
+      <SiFirebase key="firebase" color="default" />,
+      <OpenAiIcon key="chatgpt" className="text-foreground" />,
     ],
   },
   {
@@ -153,14 +148,14 @@ const WORK_ITEMS: Work[] = [
     category: "個人開発（Next.js）",
     period: "2024.05 -",
     skills: [
-      <SiTypescript key="ts" />,
-      <SiReact key="react" />,
-      <SiNextdotjs key="next" />,
-      <SiTailwindcss key="tailwind" />,
-      <SiShadcnui key="shadcn" />,
-      <SiVitest key="vitest" />,
-      <SiStorybook key="storybook" />,
-      <SiClaude key="claude" />,
+      <SiTypescript key="ts" color="default" />,
+      <SiReact key="react" color="default" />,
+      <SiNextdotjs key="next" className="text-nextjs" />,
+      <SiTailwindcss key="tailwind" color="default" />,
+      <SiShadcnui key="shadcn" className="text-shadcnui" />,
+      <SiVitest key="vitest" color="default" />,
+      <SiStorybook key="storybook" color="default" />,
+      <SiClaude key="claude" color="default" />,
     ],
     image: "/images/works/mitsuisite.png",
     href: "https://github.com/mihye1128/portfolio-next-js",
@@ -177,13 +172,13 @@ const WORK_ITEMS: Work[] = [
     category: "サイトリプレース（Astro）",
     period: "2022.09 - 2024.11",
     skills: [
-      <SiTypescript key="ts" />,
-      <SiReact key="react" />,
-      <SiAstro key="astro" />,
-      <SiTailwindcss key="tailwind" />,
-      <SiMake key="make" />,
-      <SiAlgolia key="algolia" />,
-      <SiFirebase key="firebase" />,
+      <SiTypescript key="ts" color="default" />,
+      <SiReact key="react" color="default" />,
+      <SiAstro key="astro" color="default" />,
+      <SiTailwindcss key="tailwind" color="default" />,
+      <SiMake key="make" color="default" />,
+      <SiAlgolia key="algolia" color="default" />,
+      <SiFirebase key="firebase" color="default" />,
     ],
   },
   {
@@ -195,11 +190,11 @@ const WORK_ITEMS: Work[] = [
     category: "システム開発（Angular）",
     period: "2021.12 - 2022.06",
     skills: [
-      <SiTypescript key="ts" />,
+      <SiTypescript key="ts" color="default" />,
       <SiAngular key="angular" className="text-angular" />,
-      <SiMaterialdesign key="material" />,
-      <SiSwagger key="swagger" />,
-      <SiMysql key="mysql" />,
+      <SiMaterialdesign key="material" color="default" />,
+      <SiSwagger key="swagger" color="default" />,
+      <SiMysql key="mysql" color="default" />,
     ],
   },
   {
@@ -212,13 +207,13 @@ const WORK_ITEMS: Work[] = [
     category: "システム開発（Angular）",
     period: "2021.04 - 2021.09",
     skills: [
-      <SiTypescript key="ts" />,
+      <SiTypescript key="ts" color="default" />,
       <SiAngular key="angular" className="text-angular" />,
-      <SiMaterialdesign key="material" />,
-      <SiReact key="react" />,
-      <SiNextdotjs key="next" />,
-      <SiFirebase key="firebase" />,
-      <SiAlgolia key="algolia" />,
+      <SiMaterialdesign key="material" color="default" />,
+      <SiReact key="react" color="default" />,
+      <SiNextdotjs key="next" className="text-nextjs" />,
+      <SiFirebase key="firebase" color="default" />,
+      <SiAlgolia key="algolia" color="default" />,
     ],
   },
   {
@@ -231,12 +226,12 @@ const WORK_ITEMS: Work[] = [
     category: "サイトリプレース（WordPress）",
     period: "2020.12 - 2021.03",
     skills: [
-      <SiPhp key="php" />,
-      <SiJavascript key="js" />,
-      <SiWordpress key="wordpress" />,
-      <SiSass key="sass" />,
-      <SiReact key="react" />,
-      <SiFirebase key="firebase" />,
+      <SiPhp key="php" color="default" />,
+      <SiJavascript key="js" color="default" />,
+      <SiWordpress key="wordpress" color="default" />,
+      <SiSass key="sass" color="default" />,
+      <SiReact key="react" color="default" />,
+      <SiFirebase key="firebase" color="default" />,
     ],
   },
   {
@@ -249,13 +244,13 @@ const WORK_ITEMS: Work[] = [
     category: "Webサイト制作（WordPress）",
     period: "2019.04 - 2020.11",
     skills: [
-      <SiJavascript key="js" />,
-      <SiPhp key="php" />,
+      <SiJavascript key="js" color="default" />,
+      <SiPhp key="php" color="default" />,
       <SiHtml5 key="html" />,
-      <SiWordpress key="wordpress" />,
-      <SiJquery key="jquery" />,
-      <SiReact key="react" />,
-      <SiVuedotjs key="vue" />,
+      <SiWordpress key="wordpress" color="default" />,
+      <SiJquery key="jquery" color="default" />,
+      <SiReact key="react" color="default" />,
+      <SiVuedotjs key="vue" color="default" />,
     ],
   },
   {
@@ -267,11 +262,11 @@ const WORK_ITEMS: Work[] = [
     category: "サイトリプレース（WordPress）",
     period: "2018.03 - 2019.03",
     skills: [
-      <SiJavascript key="js" />,
-      <SiPhp key="php" />,
+      <SiJavascript key="js" color="default" />,
+      <SiPhp key="php" color="default" />,
       <SiHtml5 key="html" />,
-      <SiWordpress key="wordpress" />,
-      <SiJquery key="jquery" />,
+      <SiWordpress key="wordpress" color="default" />,
+      <SiJquery key="jquery" color="default" />,
     ],
   },
 ];
@@ -283,7 +278,7 @@ export default function Works() {
       description={WORKS_SECTION_DESCRIPTION}
       id="works"
     >
-      <div className="mx-auto max-w-3xl">
+      <div className="works-list">
         {WORK_ITEMS.map((work, i) => (
           <WorkItem
             work={work}

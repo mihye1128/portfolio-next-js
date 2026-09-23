@@ -46,7 +46,7 @@ export default function Philosophy() {
       description={PHILOSOPHY_SECTION_DESCRIPTION}
       id="philosophy"
     >
-      <div className="mx-auto grid max-w-3xl gap-10 sm:grid-cols-2 lg:max-w-5xl lg:grid-cols-3">
+      <div className="philosophy-list">
         {PHILOSOPHY_ITEMS.map((item) => (
           <PhilosophyItem item={item} key={item.number} />
         ))}

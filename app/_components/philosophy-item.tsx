@@ -1,15 +1,11 @@
 import type { PhilosophyItem as PhilosophyItemType } from "@/types";
 
-interface PhilosophyItemProps {
-  item: PhilosophyItemType;
-}
-
-export default function PhilosophyItem({ item }: PhilosophyItemProps) {
+export default function PhilosophyItem({ item }: { item: PhilosophyItemType }) {
   return (
-    <div className="grid gap-2">
-      <p className="font-rajdhani text-orange-500">{item.number}</p>
-      <h3 className="font-rajdhani text-xl font-bold">{item.title}</h3>
-      <p className="text-sm leading-[1.75]">{item.description}</p>
+    <div className="philosophy-item">
+      <span className="philosophy-number">{item.number}</span>
+      <h3>{item.title}</h3>
+      <p>{item.description}</p>
     </div>
   );
 }

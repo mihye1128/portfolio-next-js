@@ -1,17 +1,38 @@
+import { ArrowDownRight } from "lucide-react";
+
 export default function Hero() {
   return (
-    <section className="text-background bg-linear-to-r from-orange-500 to-yellow-400 py-24 text-center">
-      <div className="container">
-        <h1 className="font-rajdhani mb-1 text-5xl">Mitsui&apos;s portfolio</h1>
-        <p className="font-rajdhani mb-4">front-end engineer</p>
-        <p className="text-sm leading-[1.75]">
-          <span className="inline-block">
-            TypeScript / React / Next.jsを中心に、生成AIも活用しながら
-          </span>
-          <span className="inline-block">
-            ユーザビリティと保守性を両立するUI実装に取り組んでいます。
-          </span>
+    <section className="hero container" aria-labelledby="hero-title">
+      <div className="hero-meta">
+        <span>Independent front-end engineer</span>
+        <span>Based in Hiroshima, Japan</span>
+      </div>
+      <h1 id="hero-title" className="hero-title">
+        Mitsui<span className="accent">.</span>
+        <br />
+        <span className="hero-outline">Portfolio</span>
+      </h1>
+      <div className="hero-bottom">
+        <p className="hero-caption">
+          Thoughtful interfaces.
+          <br />
+          Considered code.
         </p>
+        <div className="hero-intro">
+          <p>
+            TypeScript / React /
+            Next.jsを中心に、生成AIも活用しながら開発しています。
+            <br />
+            ユーザビリティと保守性を両立するUI実装を心がけています。
+          </p>
+          <a href="#works" className="text-link">
+            View works <ArrowDownRight size={20} aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+      <div className="hero-foot">
+        <span>Design-minded development</span>
+        <span>Scroll to explore ↓</span>
       </div>
     </section>
   );
