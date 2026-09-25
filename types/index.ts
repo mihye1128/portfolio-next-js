@@ -17,6 +17,7 @@ export interface Work {
  * CoreSkill（経験年数を示すコアスキル）の型定義
  */
 export interface CoreSkill {
+  icon: ReactNode;
   label: string;
   value: string;
   unit: string;

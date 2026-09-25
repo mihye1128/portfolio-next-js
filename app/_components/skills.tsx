@@ -1,4 +1,11 @@
 import type { CoreSkill } from "@/types";
+import {
+  SiHtml5,
+  SiJavascript,
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+} from "@icons-pack/react-simple-icons";
 import ScrollReveal from "@/components/scroll-reveal";
 import Section from "@/components/section";
 import CoreSkillCard from "./core-skill-card";
@@ -6,6 +13,7 @@ import CoreSkillCard from "./core-skill-card";
 const CORE_SKILLS: CoreSkill[] = [
   {
     label: "TypeScript",
+    icon: <SiTypescript aria-hidden="true" />,
     value: "3",
     unit: "年以上",
     description:
@@ -13,6 +21,7 @@ const CORE_SKILLS: CoreSkill[] = [
   },
   {
     label: "React",
+    icon: <SiReact aria-hidden="true" />,
     value: "4",
     unit: "年以上",
     description:
@@ -20,6 +29,7 @@ const CORE_SKILLS: CoreSkill[] = [
   },
   {
     label: "Next.js",
+    icon: <SiNextdotjs aria-hidden="true" />,
     value: "4",
     unit: "年以上",
     description:
@@ -27,6 +37,7 @@ const CORE_SKILLS: CoreSkill[] = [
   },
   {
     label: "JavaScript",
+    icon: <SiJavascript aria-hidden="true" />,
     value: "8",
     unit: "年以上",
     description:
@@ -34,6 +45,7 @@ const CORE_SKILLS: CoreSkill[] = [
   },
   {
     label: "HTML / CSS",
+    icon: <SiHtml5 aria-hidden="true" />,
     value: "8",
     unit: "年以上",
     description:
