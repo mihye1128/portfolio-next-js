@@ -1,4 +1,4 @@
-import { CONTACT_FORM_URL } from "@/constants/site";
+import { COMPANY_URL, CONTACT_FORM_URL } from "@/constants/site";
 import Section from "@/components/section";
 import ProfileCard from "./profile-card";
 
@@ -42,7 +42,16 @@ const PROFILE_CONTENT = {
         Codeと協働しながら継続的にメンテナンスしています）。
       </p>
       <p>
-        前職では会計事務所で法人経理を担当していましたが、より専門性の高いITスキルを身につけたいと考えWeb業界へ転身しました。フリーランスとして独立後はコミュニティ運営や初学者向けプログラミング学習サービスでのメンター経験もあります。
+        前職では会計事務所で法人経理を担当していましたが、より専門性の高いITスキルを身につけたいと考えWeb業界へ転身しました。2019年よりフリーランスとして独立し、コミュニティ運営や初学者向けプログラミング学習サービスでのメンター経験も積みました。2024年には法人化し、
+        <a
+          href={COMPANY_URL}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="underline underline-offset-4"
+        >
+          株式会社Taupe<span className="sr-only">（新しいタブで開く）</span>
+        </a>
+        を設立しました。
       </p>
       <p>
         お問い合わせは、

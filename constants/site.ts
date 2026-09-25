@@ -33,3 +33,5 @@ export const NAVIGATION_ITEMS = [
 ] as const;
 
 export const CONTACT_FORM_URL = "https://forms.gle/rEH7kMm447XXjLFN7";
+
+export const COMPANY_URL = "https://taupe-tech.co.jp/";
