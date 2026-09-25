@@ -9,25 +9,25 @@ import Section from "@/components/section";
 
 const AREAS = [
   {
-    title: "UI Implementation",
+    title: "画面・コンポーネントの実装",
     icon: PanelsTopLeft,
     description:
       "デザイン・仕様をもとに、WebサイトやWebアプリケーションの画面・共通コンポーネントを実装。",
   },
   {
-    title: "Web Application",
+    title: "Webアプリケーションの開発",
     icon: AppWindow,
     description:
       "フォーム、API連携、状態に応じて表示が変わるUIなど、Webアプリケーションのフロントエンドを実装。",
   },
   {
-    title: "Existing Products",
+    title: "既存サービスの改修・改善",
     icon: FilePenLine,
     description:
       "既存コードや仕様を確認しながら、機能追加・UI改善・不具合修正を担当。",
   },
   {
-    title: "Team Development",
+    title: "チームでの開発",
     icon: UsersRound,
     description:
       "デザイナー・バックエンドエンジニア・PMと連携し、仕様確認や実装範囲の調整を行いながら開発。",
