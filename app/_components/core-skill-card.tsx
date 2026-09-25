@@ -3,16 +3,14 @@ import type { CoreSkill } from "@/types";
 export default function CoreSkillCard({ skill }: { skill: CoreSkill }) {
   return (
     <div className="core-skill">
-      <div className="core-skill-label">
-        <span>{skill.label}</span>
-        <span className="skill-icon">{skill.icon}</span>
+      <h4 className="core-skill-label">{skill.label}</h4>
+      <div>
+        <p className="skill-description">{skill.description}</p>
+        <p className="skill-experience">
+          実務経験 {skill.value}
+          {skill.unit}
+        </p>
       </div>
-      <p className="skill-value">
-        {skill.value}
-        <span>+</span>
-        <small>{skill.unit}</small>
-      </p>
-      <p className="skill-description">{skill.description}</p>
     </div>
   );
 }

@@ -8,18 +8,9 @@ export interface Work {
   description: string[];
   category: string;
   period: string;
-  skills: ReactNode[];
+  skills: SkillTag[];
   image?: string;
   href?: string;
-}
-
-/**
- * Skill（スキル）の型定義
- */
-export interface Skill {
-  label: string;
-  description: string | ReactNode;
-  icon: ReactNode;
 }
 
 /**
@@ -29,7 +20,6 @@ export interface CoreSkill {
   label: string;
   value: string;
   unit: string;
-  icon: ReactNode;
   description: string;
 }
 
@@ -39,15 +29,6 @@ export interface CoreSkill {
 export interface SkillTag {
   label: string;
   icon: ReactNode;
-}
-
-/**
- * PhilosophyItem（仕事への姿勢・こだわり）の型定義
- */
-export interface PhilosophyItem {
-  number: string;
-  title: string;
-  description: string;
 }
 
 /**

@@ -34,9 +34,9 @@ export default function Hero() {
         <div className="hero-intro">
           <p>
             TypeScript / React /
-            Next.jsを中心に、生成AIも活用しながら開発しています。
+            Next.jsを中心に、Web制作からWebアプリケーション開発まで携わってきました。
             <br />
-            ユーザビリティと保守性を両立するUI実装を心がけています。
+            開発環境が変わっても、UI・フロントエンドの実装を継続して担当しています。
           </p>
           <a href="#works" className="text-link">
             View works <ArrowDownRight size={20} aria-hidden="true" />

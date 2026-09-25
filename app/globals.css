@@ -202,7 +202,6 @@ a:hover {
 .hero,
 .site-header,
 .section-title,
-.skill-value,
 .core-skill-label,
 .work-period,
 .footer-cta,
@@ -374,114 +373,74 @@ a:hover {
   font-weight: 500;
   margin-bottom: 22px;
 }
-.core-skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  padding: 1px;
-  background: hsl(var(--border));
+.core-skills-list {
+  border-top: 1px solid hsl(var(--border));
 }
 .core-skill {
-  padding: 28px;
-  background: hsl(var(--background));
-}
-.core-skill:not(:nth-child(3n + 1)) {
-  padding-left: 28px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  padding: 24px 0;
+  border-bottom: 1px solid hsl(var(--border));
 }
 .core-skill-label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 16px;
-}
-.skill-icon svg {
-  width: 18px;
-  height: 18px;
-  color: currentColor;
-}
-.skill-value {
-  font-size: 68px;
-  font-weight: 400;
-  line-height: 1.3;
-  letter-spacing: -0.07em;
-  margin: 16px 0 6px;
-}
-.skill-value > span {
-  font-size: 35px;
-  vertical-align: top;
+  font-size: 18px;
+  font-weight: 500;
   line-height: 1.8;
-  color: var(--editorial-accent);
 }
-.skill-value small {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-left: 16px;
-}
-.skill-description,
-.ai-skill dd {
+.skill-description {
   font-size: 14px;
+  line-height: 1.9;
+}
+.skill-experience {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: hsl(var(--muted-foreground));
+}
+.skills-supporting {
+  display: grid;
+  gap: 18px;
+  font-size: 13px;
   line-height: 1.9;
   color: hsl(var(--muted-foreground));
 }
-.ai-skill {
-  border-top: 1px solid hsl(var(--border));
-  padding: 22px 0;
-}
-.ai-skill dt {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-.skill-category {
+.skills-supporting > div {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 28px;
-  border-top: 1px solid hsl(var(--border));
-  padding-top: 25px;
+  gap: 40px;
 }
-.skill-category h3 {
-  margin: 0;
+.skills-supporting dt {
+  font-weight: 500;
+  color: hsl(var(--foreground));
 }
-.skill-tag {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  padding: 8px 12px;
-  border: 1px solid hsl(var(--border));
-  border-radius: 3px;
-  background: hsl(var(--card) / 0.45);
-  font-size: 12px;
-}
-.philosophy-list {
-  margin-left: 18%;
-}
-.philosophy-item {
+.what-i-do-list {
   display: grid;
-  grid-template-columns: 50px 1fr 1.35fr;
-  gap: 24px;
-  padding: 30px 0;
-  border-bottom: 1px solid hsl(var(--border));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 48px;
 }
-.philosophy-item:first-child {
-  padding-top: 0;
+.what-i-do-item {
+  display: flex;
+  gap: 20px;
+  padding: 24px 0;
+  border-top: 1px solid hsl(var(--border));
 }
-.philosophy-number {
+.what-i-do-number {
   font-family: var(--font-inter), sans-serif;
   font-size: 12px;
   color: var(--editorial-accent);
   padding-top: 5px;
 }
-.philosophy-item h3 {
+.what-i-do-item h3 {
+  font-family: var(--font-inter), sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.7;
+  margin-bottom: 10px;
 }
-.philosophy-item p {
+.what-i-do-item p {
   font-size: 14px;
-  line-height: 2;
+  line-height: 1.9;
   color: hsl(var(--muted-foreground));
 }
 .work-item {
@@ -497,7 +456,7 @@ a:hover {
   padding-top: 4px;
 }
 .work-category {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--editorial-accent);
   margin-bottom: 12px;
   letter-spacing: 0.04em;
@@ -526,12 +485,28 @@ a:hover {
 .work-skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 24px;
+  gap: 10px 18px;
+  margin-top: 20px;
+  font-size: 12px;
+  color: hsl(var(--muted-foreground));
+}
+.work-skills li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.work-description li {
+  position: relative;
+  padding-left: 14px;
+}
+.work-description li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
 }
 .work-skills svg {
-  width: 17px;
-  height: 17px;
+  width: 14px;
+  height: 14px;
   color: hsl(var(--foreground));
 }
 .profile-layout {
@@ -648,8 +623,8 @@ a:hover {
 .hero-note-mark {
   display: block;
   margin-top: 32px;
-  color: hsl(var(--muted-foreground));
-  font-size: 11px;
+  color: hsl(var(--foreground));
+  font-size: 13px;
   letter-spacing: 0.04em;
 }
 .hero-bottom {
@@ -666,27 +641,6 @@ a:hover {
 }
 .section-heading {
   position: relative;
-}
-.core-skill {
-  background-image: linear-gradient(
-    135deg,
-    hsl(var(--card) / 0.7),
-    transparent 65%
-  );
-}
-.skills-ai {
-  padding: 32px;
-  background: hsl(var(--muted) / 0.6);
-  border-left: 2px solid var(--editorial-accent);
-}
-.skills-ai > p {
-  font-size: 14px;
-  line-height: 1.9;
-  margin-bottom: 24px;
-  color: hsl(var(--muted-foreground));
-}
-.skills-content .skills-ai h3 {
-  margin-bottom: 12px;
 }
 .work-period {
   display: flex;
@@ -743,9 +697,6 @@ a:hover {
   }
   .hero-note-mark {
     margin-top: 12px;
-  }
-  .skills-ai {
-    padding: 24px 20px;
   }
 
   .header-inner {
@@ -822,49 +773,23 @@ a:hover {
   .section-description {
     font-size: 13px;
   }
-  .core-skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .core-skill,
-  .core-skill:not(:nth-child(3n + 1)) {
-    padding: 20px 16px;
-    border-left: 0;
-  }
-  .core-skill:nth-child(2n) {
-    padding-left: 16px;
-    border-left: 0;
-  }
-  .core-skill-label {
-    font-size: 12px;
-    gap: 6px;
-  }
-  .skill-value {
-    font-size: 62px;
-  }
-  .skill-value small {
-    margin-left: 8px;
-    font-size: 9px;
-  }
-  .skill-category {
+  .skills-supporting > div {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 10px;
+  }
+  .core-skill {
+    padding: 22px 0;
   }
   .skills-content {
     gap: 32px;
   }
-  .philosophy-list {
-    margin-left: 0;
+  .what-i-do-list {
+    grid-template-columns: 1fr;
   }
-  .philosophy-item {
-    grid-template-columns: 30px 1fr;
-    gap: 12px;
-    padding: 26px 0;
-  }
-  .philosophy-item p {
-    grid-column: 2;
-  }
-  .philosophy-item h3 {
-    font-size: 17px;
+  .what-i-do-item {
+    gap: 16px;
+    padding: 20px 0;
   }
   .work-item {
     grid-template-columns: 1fr;

@@ -4,7 +4,7 @@ import ScrollReveal from "@/components/scroll-reveal";
 
 export default function Footer() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" id="contact">
       <ScrollReveal className="container" targets=":scope > div">
         <div className="footer-top">
           <div>

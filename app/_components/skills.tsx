@@ -1,235 +1,92 @@
-import type { CoreSkill, Skill, SkillTag as SkillTagType } from "@/types";
-import {
-  SiAlgolia,
-  SiAngular,
-  SiAstro,
-  SiAxios,
-  SiBiome,
-  SiClaude,
-  SiDocker,
-  SiExpo,
-  SiFigma,
-  SiFirebase,
-  SiGit,
-  SiGithub,
-  SiGithubactions,
-  SiHtml5,
-  SiJavascript,
-  SiJquery,
-  SiMaterialdesign,
-  SiMui,
-  SiNextdotjs,
-  SiOpenapiinitiative,
-  SiReact,
-  SiReacthookform,
-  SiRubyonrails,
-  SiSass,
-  SiShadcnui,
-  SiSpringboot,
-  SiStimulus,
-  SiStorybook,
-  SiTailwindcss,
-  SiTanstack,
-  SiTypescript,
-  SiVite,
-  SiVitest,
-  SiVuedotjs,
-  SiWebpack,
-  SiWordpress,
-  SiZod,
-} from "@icons-pack/react-simple-icons";
-import { OpenAiIcon } from "@/components/icons/openai-icon";
-import { SendGridIcon } from "@/components/icons/sendgrid-icon";
+import type { CoreSkill } from "@/types";
 import ScrollReveal from "@/components/scroll-reveal";
 import Section from "@/components/section";
 import CoreSkillCard from "./core-skill-card";
-import SkillItem from "./skill-item";
-import SkillTag from "./skill-tag";
-
-const SKILLS_SECTION_TITLE = "Skills";
-const SKILLS_SECTION_DESCRIPTION =
-  "TypeScript / React / Next.jsを中心に、下記の技術を用いた開発が可能です。";
-
-const CORE_SKILLS_TITLE = "Core Skills";
 
 const CORE_SKILLS: CoreSkill[] = [
   {
     label: "TypeScript",
     value: "3",
-    unit: "Years",
-    icon: <SiTypescript color="default" />,
-    description: "型安全性を意識した、堅牢で保守しやすい実装ができます。",
+    unit: "年以上",
+    description:
+      "React / Next.js、Angularを用いたフロントエンド開発で使用。画面実装やAPI連携、既存機能の改修を担当。",
   },
   {
     label: "React",
     value: "4",
-    unit: "Years",
-    icon: <SiReact color="default" />,
-    description: "コンポーネント設計から状態管理まで対応できます。",
+    unit: "年以上",
+    description:
+      "Webサイト・WebアプリケーションのUI実装、コンポーネント開発、フォーム・API連携で使用。",
   },
   {
     label: "Next.js",
     value: "4",
-    unit: "Years",
-    icon: <SiNextdotjs className="text-nextjs" />,
-    description: "App RouterやSSR/ISRを活かした実装ができます。",
-  },
-  {
-    label: "Tailwind CSS",
-    value: "4",
-    unit: "Years",
-    icon: <SiTailwindcss color="default" />,
-    description: "デザインに忠実で崩れにくいスタイリングができます。",
+    unit: "年以上",
+    description:
+      "Webサービス、メディアサイト、管理画面の開発で使用。画面実装、API連携、既存機能の改修・UI改善を担当。",
   },
   {
     label: "JavaScript",
     value: "8",
-    unit: "Years",
-    icon: <SiJavascript color="default" />,
-    description: "DOM操作から非同期処理まで幅広く対応できます。",
+    unit: "年以上",
+    description:
+      "Web制作からWebアプリケーション開発まで継続して使用。DOM操作、イベント処理、非同期通信を伴うUI実装を担当。",
   },
   {
     label: "HTML / CSS",
     value: "8",
-    unit: "Years",
-    icon: <SiHtml5 color="default" />,
-    description: "セマンティックでアクセシブルなマークアップができます。",
+    unit: "年以上",
+    description:
+      "Webサイト・Webアプリケーションの画面実装で使用。WordPressテーマ制作、共通レイアウト、レスポンシブ対応、既存CSSの改修を担当。",
   },
 ];
 
-const AI_SKILLS_TITLE = "AI / 開発支援";
-const AI_SKILLS_DESCRIPTION =
-  "設計・実装・レビュー・テスト作成まで、生成AIを日常的に活用して開発効率の向上に取り組んでいます。";
-
-const AI_SKILLS: Skill[] = [
+const OTHER_TECHNOLOGIES = [
   {
-    icon: <SiClaude color="default" />,
-    label: "Claude Code",
-    description: "設計・実装・レビュー・テスト作成まで日常的に活用。",
+    title: "UI / Frontend Development",
+    description:
+      "Tailwind CSS（実務経験 4年以上）、Sass、Storybook、React Hook Form、TanStack Query、Zod、MUI、shadcn/ui、Axios、Vitest、OpenAPI",
   },
   {
-    icon: <OpenAiIcon className="text-foreground" />,
-    label: "ChatGPT",
-    description: "実装方針の壁打ちやコードレビューの補助に活用。",
+    title: "Other Experience",
+    description:
+      "案件ごとに使用してきた技術：Angular / Angular Material、Vue.js、React Native / Expo、Astro、WordPress、jQuery。Spring Boot / Thymeleaf環境での画面実装、Ruby on Rails / Stimulus.js環境でのフロントエンド実装も担当。",
   },
+  { title: "サービス連携", description: "Firebase、SendGrid、Algolia" },
   {
-    icon: <SiFigma color="default" />,
-    label: "Figma MCP",
-    description: "Figmaのデザインデータをもとにした実装効率化に活用。",
-  },
-];
-
-interface SkillTagCategory {
-  title: string;
-  skillItems: SkillTagType[];
-}
-
-const SKILL_TAG_CATEGORIES: SkillTagCategory[] = [
-  {
-    title: "UI / Styling",
-    skillItems: [
-      { icon: <SiShadcnui className="text-shadcnui" />, label: "shadcn/ui" },
-      { icon: <SiMui color="default" />, label: "MUI" },
-      { icon: <SiMaterialdesign color="default" />, label: "Angular Material" },
-      { icon: <SiSass color="default" />, label: "Sass" },
-    ],
-  },
-  {
-    title: "Frameworks / Libraries",
-    skillItems: [
-      { icon: <SiReact color="default" />, label: "React Native" },
-      { icon: <SiExpo className="text-expo" />, label: "Expo" },
-      { icon: <SiAngular className="text-angular" />, label: "Angular" },
-      { icon: <SiVuedotjs color="default" />, label: "Vue.js" },
-      { icon: <SiStimulus color="default" />, label: "Stimulus.js" },
-      { icon: <SiJquery color="default" />, label: "jQuery" },
-      { icon: <SiAstro color="default" />, label: "Astro" },
-      { icon: <SiWordpress color="default" />, label: "WordPress" },
-      { icon: <SiSpringboot color="default" />, label: "Spring Boot" },
-      { icon: <SiRubyonrails color="default" />, label: "Ruby on Rails" },
-    ],
-  },
-  {
-    title: "Frontend Tooling",
-    skillItems: [
-      { icon: <SiReacthookform color="default" />, label: "React Hook Form" },
-      {
-        icon: <SiTanstack className="text-foreground" />,
-        label: "TanStack Query",
-      },
-      { icon: <SiZod color="default" />, label: "Zod" },
-      { icon: <SiAxios color="default" />, label: "Axios" },
-      { icon: <SiBiome color="default" />, label: "Biome" },
-      { icon: <SiVitest color="default" />, label: "Vitest" },
-      { icon: <SiOpenapiinitiative color="default" />, label: "OpenAPI" },
-      { icon: <SiStorybook color="default" />, label: "Storybook" },
-    ],
-  },
-  {
-    title: "Backend / Services",
-    skillItems: [
-      { icon: <SiFirebase color="default" />, label: "Firebase" },
-      { icon: <SendGridIcon color="default" />, label: "SendGrid" },
-      { icon: <SiAlgolia color="default" />, label: "Algolia" },
-    ],
-  },
-  {
-    title: "Development",
-    skillItems: [
-      { icon: <SiGit color="default" />, label: "Git" },
-      { icon: <SiGithub className="text-github" />, label: "GitHub" },
-      { icon: <SiGithubactions color="default" />, label: "GitHub Actions" },
-      { icon: <SiVite color="default" />, label: "Vite" },
-      { icon: <SiWebpack className="text-foreground" />, label: "Webpack" },
-      { icon: <SiDocker color="default" />, label: "Docker" },
-    ],
+    title: "開発環境・支援ツール",
+    description:
+      "Git、GitHub、GitHub Actions、Vite、Webpack、Biome、Docker。Claude Code、ChatGPT、Figma MCPを実装・レビューなどの開発支援に活用。",
   },
 ];
 
 export default function Skills() {
   return (
     <Section
-      title={SKILLS_SECTION_TITLE}
-      description={SKILLS_SECTION_DESCRIPTION}
+      title="Skills"
+      description="フロントエンドの実務で継続して使用してきた技術と、その用途。"
       id="skills"
     >
       <ScrollReveal
         className="skills-content"
-        targets=":scope > div:first-child > h3, .core-skill, .skills-ai, .skill-category"
+        targets=".core-skill, .skills-supporting"
       >
         <div>
-          <h3>{CORE_SKILLS_TITLE}</h3>
-          <div className="core-skills-grid">
+          <h3>Core Technologies</h3>
+          <div className="core-skills-list">
             {CORE_SKILLS.map((skill) => (
               <CoreSkillCard skill={skill} key={skill.label} />
             ))}
           </div>
         </div>
-
-        <div className="skills-ai">
-          <h3>{AI_SKILLS_TITLE}</h3>
-          <p className="mb-3 text-sm leading-[1.75]">{AI_SKILLS_DESCRIPTION}</p>
-          <ul className="grid gap-4 sm:grid-cols-3">
-            {AI_SKILLS.map((skill) => (
-              <li key={skill.label}>
-                <SkillItem skill={skill} />
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {SKILL_TAG_CATEGORIES.map((category) => (
-          <div key={category.title} className="skill-category">
-            <h3>{category.title}</h3>
-            <ul className="flex flex-wrap gap-2">
-              {category.skillItems.map((skill) => (
-                <li key={skill.label}>
-                  <SkillTag skill={skill} />
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <dl className="skills-supporting">
+          {OTHER_TECHNOLOGIES.map((item) => (
+            <div key={item.title}>
+              <dt>{item.title}</dt>
+              <dd>{item.description}</dd>
+            </div>
+          ))}
+        </dl>
       </ScrollReveal>
     </Section>
   );

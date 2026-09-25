@@ -20,15 +20,18 @@ export default function WorkItem({ work }: WorkItemProps) {
             work.title
           )}
         </h3>
-        <div className="work-description">
+        <ul className="work-description" aria-label="担当内容">
           {work.description.map((item, index) => (
-            <p key={index}>{item}</p>
+            <li key={index}>{item}</li>
           ))}
-        </div>
+        </ul>
         {work.skills && (
-          <ul className="work-skills">
-            {work.skills.map((skill, index) => (
-              <li key={index}>{skill}</li>
+          <ul className="work-skills" aria-label="使用技術・開発環境">
+            {work.skills.map((skill) => (
+              <li key={skill.label}>
+                <span aria-hidden="true">{skill.icon}</span>
+                <span>{skill.label}</span>
+              </li>
             ))}
           </ul>
         )}
