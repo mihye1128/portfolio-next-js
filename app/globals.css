@@ -57,65 +57,76 @@
 
 @layer base {
   :root {
-    --background: 40 25% 97%;
-    --foreground: 0 0% 10%;
+    /* Palette channels retain support for hsl(var(--token) / opacity). */
+    --palette-light-background: 60 17.64706% 96.66667%; /* #F8F8F5 */
+    --palette-light-text: 120 2.38095% 16.47059%; /* #292B29 */
+    --palette-light-accent: 142.22222 10.67194% 49.60784%; /* #718C7B */
+    --palette-light-accent-text: 140 17.85714% 32.94118%; /* #45634F */
+    --palette-light-border: 120 8.33333% 85.88235%; /* #D8DED8 */
+    --palette-dark-background: 144 7.24638% 13.52941%; /* #202522 */
+    --palette-dark-text: 72 15.15152% 93.52941%; /* #F0F1EC */
+    --palette-dark-accent: 132 12.5% 68.62745%; /* #A5B9A9 */
+    --palette-dark-border: 136 9.67742% 30.39216%; /* #46554A */
 
+    --background: var(--palette-light-background);
+    --foreground: var(--palette-light-text);
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
-
-    --primary: 40 10% 11%;
-    --primary-foreground: 40 20% 98%;
-
-    --secondary: 40 15% 93%;
-    --secondary-foreground: 40 10% 11%;
-
-    --muted: 40 15% 93%;
-    --muted-foreground: 35 7% 39%;
-
-    --accent: 40 15% 93%;
-    --accent-foreground: 40 10% 11%;
-
+    --card-foreground: var(--foreground);
+    --popover: var(--card);
+    --popover-foreground: var(--foreground);
+    --primary: var(--foreground);
+    --primary-foreground: var(--background);
+    --secondary: 84 14.28571% 93.13725%;
+    --secondary-foreground: var(--foreground);
+    --muted: var(--secondary);
+    --muted-foreground: 138 5% 39.21569%;
+    --accent: var(--secondary);
+    --accent-foreground: var(--foreground);
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-
-    --border: 40 15% 87%;
-    --input: 40 15% 87%;
-    --ring: 40 10% 11%;
+    --border: var(--palette-light-border);
+    --input: var(--border);
+    --ring: var(--palette-light-accent-text);
+    --editorial-accent: hsl(var(--palette-light-accent));
+    --editorial-accent-text: hsl(var(--palette-light-accent-text));
+    --selection-background: var(--editorial-accent-text);
+    --selection-foreground: hsl(var(--background));
+    --footer-background: hsl(var(--palette-dark-background));
+    --footer-foreground: hsl(var(--palette-dark-text));
+    --footer-border: hsl(var(--palette-dark-border));
+    --footer-accent-text: hsl(var(--palette-dark-accent));
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 9%;
-    --foreground: 45 20% 96%;
-
-    --card: 35 8% 12%;
-    --card-foreground: 45 20% 96%;
-
-    --popover: 44 25% 8%;
-    --popover-foreground: 45 20% 96%;
-
-    --primary: 45 20% 96%;
-    --primary-foreground: 40 10% 11%;
-
-    --secondary: 44 12% 17%;
-    --secondary-foreground: 45 20% 96%;
-
-    --muted: 44 12% 17%;
-    --muted-foreground: 40 8% 65%;
-
-    --accent: 44 12% 17%;
-    --accent-foreground: 45 20% 96%;
-
+    --background: var(--palette-dark-background);
+    --foreground: var(--palette-dark-text);
+    --card: 137.14286 8.04598% 17.05882%;
+    --card-foreground: var(--foreground);
+    --popover: var(--card);
+    --popover-foreground: var(--foreground);
+    --primary: var(--foreground);
+    --primary-foreground: var(--background);
+    --secondary: 138 9.43396% 20.78431%;
+    --secondary-foreground: var(--foreground);
+    --muted: var(--secondary);
+    --muted-foreground: 132 6.84932% 71.37255%;
+    --accent: var(--secondary);
+    --accent-foreground: var(--foreground);
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-
-    --border: 44 12% 19%;
-    --input: 44 12% 19%;
-    --ring: 40 15% 80%;
+    --border: var(--palette-dark-border);
+    --input: var(--border);
+    --ring: var(--palette-dark-accent);
+    --editorial-accent: hsl(var(--palette-dark-accent));
+    --editorial-accent-text: hsl(var(--palette-dark-accent));
+    --selection-background: var(--editorial-accent-text);
+    --selection-foreground: hsl(var(--background));
+    --footer-background: hsl(var(--palette-light-background));
+    --footer-foreground: hsl(var(--palette-light-text));
+    --footer-border: hsl(var(--palette-light-border));
+    --footer-accent-text: hsl(var(--palette-light-accent-text));
   }
 }
 
@@ -164,12 +175,6 @@
   }
 }
 
-:root {
-  --editorial-accent: #a44732;
-}
-.dark {
-  --editorial-accent: #ff8069;
-}
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 110px;
@@ -178,8 +183,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 ::selection {
-  background: var(--editorial-accent);
-  color: white;
+  background: var(--selection-background);
+  color: var(--selection-foreground);
 }
 a,
 button {
@@ -189,10 +194,10 @@ a {
   transition: color 0.2s ease;
 }
 a:hover {
-  color: var(--editorial-accent);
+  color: var(--editorial-accent-text);
 }
 :focus-visible {
-  outline: 2px solid var(--editorial-accent);
+  outline: 2px solid hsl(var(--ring));
   outline-offset: 5px;
 }
 .accent {
@@ -244,7 +249,7 @@ a:hover {
 }
 .nav-number {
   font-size: 9px;
-  color: var(--editorial-accent);
+  color: var(--editorial-accent-text);
 }
 .header-actions {
   display: flex;
@@ -346,7 +351,7 @@ a:hover {
 }
 .section-number {
   font-size: 12px;
-  color: var(--editorial-accent);
+  color: var(--editorial-accent-text);
   align-self: flex-start;
   padding-top: 12px;
 }
@@ -464,7 +469,7 @@ a:hover {
 .what-i-do-number {
   font-family: var(--font-inter), sans-serif;
   font-size: 12px;
-  color: var(--editorial-accent);
+  color: var(--editorial-accent-text);
   padding-top: 5px;
 }
 .what-i-do-item h3 {
@@ -507,7 +512,7 @@ a:hover {
 }
 .work-category {
   font-size: 12px;
-  color: var(--editorial-accent);
+  color: var(--editorial-accent-text);
   margin-bottom: 12px;
   letter-spacing: 0.04em;
 }
@@ -599,8 +604,8 @@ a:hover {
   gap: 18px;
 }
 .site-footer {
-  background: hsl(var(--foreground));
-  color: hsl(var(--background));
+  background: var(--footer-background);
+  color: var(--footer-foreground);
   margin-top: 70px;
   padding: 70px 0 24px;
 }
@@ -636,7 +641,7 @@ a:hover {
 .footer-bottom {
   display: flex;
   gap: 30px;
-  border-top: 1px solid currentColor;
+  border-top: 1px solid var(--footer-border);
   padding-top: 24px;
   font-size: 10px;
 }
@@ -660,7 +665,7 @@ a:hover {
   margin-bottom: 8px;
 }
 .hero-note-label {
-  color: var(--editorial-accent);
+  color: var(--editorial-accent-text);
   font-size: 10px;
   letter-spacing: 0.15em;
 }
@@ -706,10 +711,12 @@ a:hover {
   background: var(--editorial-accent);
 }
 .site-footer {
-  --editorial-accent: #ffad96;
+  --editorial-accent-text: var(--footer-accent-text);
+  --selection-background: var(--footer-accent-text);
+  --selection-foreground: var(--footer-background);
 }
-.dark .site-footer {
-  --editorial-accent: #a44732;
+.site-footer :focus-visible {
+  outline-color: var(--footer-accent-text);
 }
 @media (max-width: 1023px) {
   .hero-composition {
