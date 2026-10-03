@@ -96,10 +96,38 @@
     --footer-border: hsl(var(--palette-dark-border));
     --footer-accent-text: hsl(var(--palette-dark-accent));
 
+    /* Soft surfaces share the page color; depth comes from paired shadows. */
+    --neumo-shadow-light: rgb(255 255 255 / 0.95);
+    --neumo-shadow-dark: rgb(83 104 89 / 0.14);
+    --neumo-edge: rgb(255 255 255 / 0.55);
+    --neumo-inset-edge: hsl(var(--palette-light-border) / 0.6);
+    --neumo-inset-shadow: rgb(83 104 89 / 0.22);
+    --neumo-raised:
+      -8px -8px 20px var(--neumo-shadow-light),
+      8px 8px 20px var(--neumo-shadow-dark), inset 0 1px 0 var(--neumo-edge);
+    --neumo-small:
+      -3px -3px 8px var(--neumo-shadow-light),
+      3px 3px 8px var(--neumo-shadow-dark);
+    --neumo-inset:
+      inset 0 0 0 1px var(--neumo-inset-edge),
+      inset 2px 2px 3px var(--neumo-inset-shadow),
+      inset 5px 5px 12px var(--neumo-shadow-dark),
+      inset -3px -3px 7px var(--neumo-shadow-light);
+    --neumo-hover:
+      -4px -4px 10px var(--neumo-shadow-light),
+      4px 4px 10px var(--neumo-shadow-dark);
+    --neumo-radius: 24px;
+    --neumo-radius-small: 18px;
+
     --radius: 0.5rem;
   }
 
   .dark {
+    --neumo-shadow-light: rgb(70 85 74 / 0.32);
+    --neumo-shadow-dark: rgb(0 0 0 / 0.36);
+    --neumo-edge: rgb(165 185 169 / 0.07);
+    --neumo-inset-edge: hsl(var(--palette-dark-border) / 0.55);
+    --neumo-inset-shadow: rgb(0 0 0 / 0.5);
     --background: var(--palette-dark-background);
     --foreground: var(--palette-dark-text);
     --card: 137.14286 8.04598% 17.05882%;
@@ -718,6 +746,116 @@ a:hover {
 .site-footer :focus-visible {
   outline-color: var(--footer-accent-text);
 }
+/* Neumorphic surfaces: raised content, recessed notes, tactile controls. */
+.what-i-do-list {
+  gap: 32px;
+  padding: 0;
+  background: transparent;
+}
+.what-i-do-item,
+.core-skill,
+.hero-note {
+  background: hsl(var(--background));
+  background-image: none;
+  border: 0;
+  border-radius: var(--neumo-radius);
+  box-shadow: var(--neumo-raised);
+}
+.core-skills-list {
+  display: grid;
+  gap: 24px;
+  border: 0;
+}
+.core-skill {
+  padding: 28px 32px;
+  box-shadow: var(--neumo-small);
+  border-radius: var(--neumo-radius-small);
+}
+.hero-note {
+  padding: 28px 24px;
+  box-shadow: var(--neumo-inset);
+  border-radius: var(--neumo-radius-small);
+}
+.skills-supporting,
+.profile-layout > div:last-child > ul {
+  background: hsl(var(--background));
+  border: 0;
+  border-radius: var(--neumo-radius);
+  box-shadow: var(--neumo-inset);
+}
+.profile-layout > div:last-child > ul {
+  padding: 28px;
+}
+.what-i-do-item {
+  gap: 20px;
+}
+.what-i-do-mark {
+  flex-basis: 28px;
+  padding-top: 2px;
+  gap: 16px;
+}
+.what-i-do-mark > svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.core-skill-label {
+  gap: 12px;
+}
+.core-skill-icon {
+  width: 20px;
+  height: 20px;
+  border: 0;
+}
+:is(.header-actions > button, .profile-name-row > a),
+.text-link {
+  background: hsl(var(--background));
+  color: var(--editorial-accent-text);
+  border: 1px solid hsl(var(--border));
+  box-shadow: var(--neumo-small);
+}
+:is(.header-actions > button, .profile-name-row > a) {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border-color: transparent;
+  box-shadow: none;
+}
+.text-link {
+  min-height: 44px;
+  padding: 12px 24px;
+  border-radius: 999px;
+}
+@media (hover: hover) and (pointer: fine) {
+  :is(.header-actions > button, .profile-name-row > a, .text-link):hover {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    border-color: var(--editorial-accent);
+  }
+  .text-link:hover {
+    box-shadow: var(--neumo-hover);
+  }
+}
+.text-link:active {
+  box-shadow: var(--neumo-inset);
+}
+/* Keep keyboard focus visible independently of the soft surface shadows. */
+:is(.header-actions > button, .profile-name-row > a):focus-visible,
+.text-link:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :is(.header-actions > button, .profile-name-row > a, .text-link) {
+    transition:
+      box-shadow 180ms ease,
+      border-color 180ms ease,
+      color 180ms ease;
+  }
+}
+
 @media (max-width: 1023px) {
   .hero-composition {
     grid-template-columns: minmax(0, 1fr) 180px;
@@ -725,7 +863,7 @@ a:hover {
     padding-block: 64px 48px;
   }
   .hero-note {
-    padding-left: 18px;
+    padding: 24px 18px;
   }
   .hero-note p {
     font-size: 14px;
@@ -744,7 +882,7 @@ a:hover {
   }
   .hero-note {
     margin: 0;
-    padding-block: 0;
+    padding: 24px;
   }
   .hero-note p {
     margin-top: 10px;
@@ -836,7 +974,7 @@ a:hover {
     gap: 10px;
   }
   .core-skill {
-    padding: 22px 0;
+    padding: 24px 20px;
   }
   .skills-content {
     gap: 32px;
@@ -845,12 +983,27 @@ a:hover {
     grid-template-columns: 1fr;
   }
   .what-i-do-item {
-    gap: 18px;
+    gap: 16px;
     padding: 24px 20px;
   }
+  .what-i-do-list {
+    gap: 24px;
+  }
+  .what-i-do-item,
+  .core-skill {
+    border-radius: var(--neumo-radius-small);
+  }
   .what-i-do-mark {
-    flex-basis: 28px;
+    flex-basis: 24px;
+    padding-top: 3px;
     gap: 16px;
+  }
+  .what-i-do-mark > svg {
+    width: 24px;
+    height: 24px;
+  }
+  .profile-layout > div:last-child > ul {
+    padding: 24px 20px;
   }
   .skills-supporting {
     padding: 22px 20px;
